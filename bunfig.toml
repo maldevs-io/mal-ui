@@ -1,0 +1,6 @@
+# Bun config
+[install]
+exact = true
+
+[install.scopes]
+# Configure scoped registry here if needed
