@@ -1,4 +1,4 @@
-# MAL UI — Next.js demo
+# MALUI — Next.js demo
 
 A demo of every `mal-ui` subpath inside a Next.js 15 (App Router) application.
 

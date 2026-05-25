@@ -70,7 +70,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <Group h="100%" px="md" justify="space-between">
             <Group>
               <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-              <Title order={4}>MAL UI Demo</Title>
+              <Title order={4}>MALUI Demo</Title>
             </Group>
             <Group>
               <Text size="sm" c="dimmed" onClick={() => spotlight.open()} style={{ cursor: 'pointer' }}>

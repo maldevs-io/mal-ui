@@ -6,7 +6,7 @@ import { Providers } from './providers';
 import { Shell } from './shell';
 
 export const metadata: Metadata = {
-  title: 'MAL UI — Next.js Demo',
+  title: 'MALUI — Next.js Demo',
   description: 'Demo of every mal-ui subpath inside a Next.js 15 App Router app',
 };
 

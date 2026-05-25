@@ -177,7 +177,7 @@ export default function HooksPage() {
 
   // ─── Logger & Title ─────────────────────────────────────────
   useLogger('HooksPage', [count]);
-  useDocumentTitle('Hooks — MAL UI Demo');
+  useDocumentTitle('Hooks — MALUI Demo');
 
   // ─── Hotkeys ────────────────────────────────────────────────
   useHotkeys([['mod+B', toggle]]);
