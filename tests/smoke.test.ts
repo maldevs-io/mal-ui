@@ -81,7 +81,7 @@ describe('mal-ui subpaths resolve', () => {
   test('theme', async () => {
     const m: any = await import('../src/theme');
     expect(m.malTheme).toBeDefined();
-    expect(m.malColorTokens.primary).toBe('blue');
+    expect(m.malColorTokens.primary).toBe('mal-brand');
   });
 
   test('root index', async () => {
