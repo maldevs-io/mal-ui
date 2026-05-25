@@ -86,6 +86,26 @@ async function main() {
     const rel = o.path.replace(`${ROOT}/`, '');
     console.log(`  ${rel}  (${(o.size / 1024).toFixed(1)} KB)`);
   }
+
+  // Post-process: hoist all stray "use client" directives.
+  // Bundled Mantine modules contain individual "use client" markers; after
+  // bundling these end up mid-file which Next.js and React Server Components
+  // reject. We strip every occurrence and prepend a single one at the top of
+  // any file that contained at least one — that keeps the file client-only,
+  // which is the correct semantics for a UI library.
+  const { readFile, writeFile } = await import('node:fs/promises');
+  let hoisted = 0;
+  for (const o of result.outputs) {
+    if (!o.path.endsWith('.js')) continue;
+    const src = await readFile(o.path, 'utf8');
+    // Match both "use client" and 'use client' with optional semicolon
+    const directiveRe = /^\s*["']use client["'];?\s*$/gm;
+    if (!directiveRe.test(src)) continue;
+    const stripped = src.replace(/^\s*["']use client["'];?\s*$/gm, '');
+    await writeFile(o.path, `"use client";\n${stripped}`);
+    hoisted++;
+  }
+  console.log(`[mal-ui] hoisted "use client" in ${hoisted} files`);
 }
 
 main().catch((err) => {

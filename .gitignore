@@ -7,3 +7,9 @@ dist/
 coverage/
 *.tgz
 .bun/
+
+# Next.js examples
+examples/**/.next/
+examples/**/node_modules/
+examples/**/out/
+examples/**/next-env.d.ts
