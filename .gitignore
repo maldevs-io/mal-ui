@@ -13,3 +13,5 @@ examples/**/.next/
 examples/**/node_modules/
 examples/**/out/
 examples/**/next-env.d.ts
+examples/**/tsconfig.tsbuildinfo
+examples/**/.turbo/
