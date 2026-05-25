@@ -18,7 +18,7 @@ const shikiAdapter = createShikiAdapter(async () => {
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <MantineProvider theme={malTheme} defaultColorScheme="light">
+    <MantineProvider theme={malTheme} defaultColorScheme="auto">
       <CodeHighlightAdapterProvider adapter={shikiAdapter}>
         <ModalsProvider>
           <NavigationProgress />

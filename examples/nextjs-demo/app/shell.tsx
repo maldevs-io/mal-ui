@@ -1,6 +1,17 @@
 'use client';
 
-import { AppShell, Burger, Group, NavLink, ScrollArea, Text, Title } from 'mal-ui/core';
+import {
+  ActionIcon,
+  AppShell,
+  Burger,
+  Group,
+  NavLink,
+  ScrollArea,
+  Text,
+  Title,
+  useComputedColorScheme,
+  useMantineColorScheme,
+} from 'mal-ui/core';
 import { useDisclosure } from 'mal-ui/hooks';
 import { Spotlight, spotlight } from 'mal-ui/spotlight';
 import { usePathname, useRouter } from 'next/navigation';
@@ -28,6 +39,12 @@ export function Shell({ children }: { children: ReactNode }) {
   const [opened, { toggle }] = useDisclosure(true);
   const pathname = usePathname();
   const router = useRouter();
+  const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme('light');
+
+  const toggleColorScheme = () => {
+    setColorScheme(computedColorScheme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <>
@@ -54,9 +71,19 @@ export function Shell({ children }: { children: ReactNode }) {
               <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
               <Title order={4}>MAL UI Demo</Title>
             </Group>
-            <Text size="sm" c="dimmed" onClick={() => spotlight.open()} style={{ cursor: 'pointer' }}>
-              Press ⌘K to search
-            </Text>
+            <Group>
+              <Text size="sm" c="dimmed" onClick={() => spotlight.open()} style={{ cursor: 'pointer' }}>
+                ⌘K
+              </Text>
+              <ActionIcon
+                variant="default"
+                size="lg"
+                onClick={toggleColorScheme}
+                aria-label="Toggle color scheme"
+              >
+                {computedColorScheme === 'dark' ? '☀️' : '🌙'}
+              </ActionIcon>
+            </Group>
           </Group>
         </AppShell.Header>
         <AppShell.Navbar p="xs">
