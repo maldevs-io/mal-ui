@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['mal-ui'],
+  transpilePackages: ["mal-ui"],
   experimental: {
-    optimizePackageImports: ['mal-ui'],
+    optimizePackageImports: ["mal-ui"],
   },
 };
 
