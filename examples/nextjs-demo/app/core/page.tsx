@@ -214,7 +214,7 @@ export default function CorePage() {
             <Mark>Marked text</Mark>
             <Code>const x = 42;</Code>
             <Code block>{`function hello() {\n  return 'world';\n}`}</Code>
-            <Blockquote cite="– Someone wise">Life is short, use Mantine.</Blockquote>
+            <Blockquote cite="– Someone wise">Life is short, use MALUI.</Blockquote>
           </Stack>
         </Group>
       </Section>
@@ -276,7 +276,7 @@ export default function CorePage() {
         <Accordion>
           <Accordion.Item value="what">
             <Accordion.Control>What is mal-ui?</Accordion.Control>
-            <Accordion.Panel>A bundled re-export of all Mantine packages.</Accordion.Panel>
+            <Accordion.Panel>A bundled re-export of all MALUI packages.</Accordion.Panel>
           </Accordion.Item>
           <Accordion.Item value="how">
             <Accordion.Control>How to install?</Accordion.Control>
