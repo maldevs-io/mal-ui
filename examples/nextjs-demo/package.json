@@ -10,17 +10,18 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@tiptap/extension-link": "^2.10.0",
+        "@tiptap/pm": "^2.10.0",
+        "@tiptap/react": "^2.10.0",
+        "@tiptap/starter-kit": "^2.10.0",
+        "dayjs": "^1.11.13",
+        "embla-carousel-react": "^8.5.2",
         "mal-ui": "file:../..",
         "next": "^16.0.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "recharts": "^2.15.0",
-        "dayjs": "^1.11.13",
-        "embla-carousel-react": "^8.5.2",
-        "@tiptap/pm": "^2.10.0",
-        "@tiptap/react": "^2.10.0",
-        "@tiptap/extension-link": "^2.10.0",
-        "@tiptap/starter-kit": "^2.10.0"
+        "shiki": "^4.1.0"
     },
     "devDependencies": {
         "@types/node": "^22.0.0",
