@@ -78,6 +78,13 @@ describe('mal-ui subpaths resolve', () => {
     expect(m.Schedule).toBeDefined();
   });
 
+  test('dates', async () => {
+    const m: any = await import('../src/dates');
+    expect(m.DatePicker).toBeDefined();
+    expect(m.Calendar).toBeDefined();
+    expect(m.DatesProvider).toBeDefined();
+  });
+
   test('theme', async () => {
     const m: any = await import('../src/theme');
     expect(m.malTheme).toBeDefined();

@@ -72,6 +72,10 @@
             "types": "./dist/schedule/index.d.ts",
             "import": "./dist/schedule/index.js"
         },
+        "./dates": {
+            "types": "./dist/dates/index.d.ts",
+            "import": "./dist/dates/index.js"
+        },
         "./theme": {
             "types": "./dist/theme/index.d.ts",
             "import": "./dist/theme/index.js"

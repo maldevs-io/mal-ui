@@ -16,6 +16,7 @@ const ITEMS = [
   ['/dropzone', 'Dropzone', 'File drag & drop'],
   ['/carousel', 'Carousel', 'Embla-based carousel'],
   ['/nprogress', 'Nprogress', 'Top navigation progress bar'],
+  ['/dates', 'Dates', 'DatePicker, DateInput, TimePicker, Calendar, etc.'],
   ['/schedule', 'Schedule', 'Calendar / events schedule grid'],
   ['/theme', 'Theme tokens', 'MAL brand color, radius and spacing tokens'],
 ] as const;

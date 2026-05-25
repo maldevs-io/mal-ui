@@ -31,6 +31,7 @@ const ROUTES = [
   { href: '/dropzone', label: 'Dropzone' },
   { href: '/carousel', label: 'Carousel' },
   { href: '/nprogress', label: 'Nprogress' },
+  { href: '/dates', label: 'Dates' },
   { href: '/schedule', label: 'Schedule' },
   { href: '/theme', label: 'Theme tokens' },
 ];

@@ -29,6 +29,7 @@ const SUBPATHS = [
   'nprogress',
   'modals',
   'schedule',
+  'dates',
 ] as const;
 
 const EXTRA_ENTRIES = ['index', 'theme/index'] as const;

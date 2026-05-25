@@ -26,6 +26,7 @@ describe.skipIf(!hasDist)('dist build output', () => {
     'nprogress/index.js',
     'modals/index.js',
     'schedule/index.js',
+    'dates/index.js',
     'theme/index.js',
   ];
 
