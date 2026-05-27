@@ -1,7 +1,7 @@
 'use client';
 
 import { CodeHighlightAdapterProvider, createShikiAdapter } from 'mal-ui/code-highlight';
-import { MantineProvider } from 'mal-ui/core';
+import { MALUIProvider } from 'mal-ui/core';
 import { ModalsProvider } from 'mal-ui/modals';
 import { Notifications } from 'mal-ui/notifications';
 import { NavigationProgress } from 'mal-ui/nprogress';
@@ -18,7 +18,7 @@ const shikiAdapter = createShikiAdapter(async () => {
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <MantineProvider theme={malTheme} defaultColorScheme="auto">
+    <MALUIProvider theme={malTheme} defaultColorScheme="auto">
       <CodeHighlightAdapterProvider adapter={shikiAdapter}>
         <ModalsProvider>
           <NavigationProgress />
@@ -26,6 +26,6 @@ export function Providers({ children }: { children: ReactNode }) {
           {children}
         </ModalsProvider>
       </CodeHighlightAdapterProvider>
-    </MantineProvider>
+    </MALUIProvider>
   );
 }

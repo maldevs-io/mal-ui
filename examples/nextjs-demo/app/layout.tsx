@@ -1,5 +1,5 @@
 import 'mal-ui/styles.css';
-import { ColorSchemeScript, mantineHtmlProps } from 'mal-ui/core';
+import { ColorSchemeScript, MALUIHtmlProps } from 'mal-ui/core';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Providers } from './providers';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" {...mantineHtmlProps}>
+    <html lang="en" {...MALUIHtmlProps}>
       <head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>

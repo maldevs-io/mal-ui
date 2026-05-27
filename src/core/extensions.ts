@@ -1,3 +1,81 @@
-// Custom MAL UI components extending @mantine/core go here.
-// Add exports below as the library grows.
-export {};
+// ─── MALUI-branded aliases for Mantine identifiers ──────────────────────────
+// Re-export every Mantine-branded symbol under a MALUI name so consumers can use
+// either naming convention. The original Mantine names are still re-exported from index.ts.
+
+export {
+  // ─── Provider / Context ─────────────────────────────────────────────────────
+  MantineProvider as MALUIProvider,
+  MantineContext as MALUIContext,
+  MantineThemeProvider as MALUIThemeProvider,
+  HeadlessMantineProvider as HeadlessMALUIProvider,
+
+  // ─── Theme utilities ────────────────────────────────────────────────────────
+  mantineHtmlProps as MALUIHtmlProps,
+  mergeMantineTheme as mergeMALUITheme,
+  validateMantineTheme as validateMALUITheme,
+  isMantineColorScheme as isMALUIColorScheme,
+
+  // ─── Hooks (core-level) ─────────────────────────────────────────────────────
+  useMantineTheme as useMALUITheme,
+  useSafeMantineTheme as useSafeMALUITheme,
+  useMantineColorScheme as useMALUIColorScheme,
+  useMantineContext as useMALUIContext,
+  useMantineClassNamesPrefix as useMALUIClassNamesPrefix,
+  useMantineCssVariablesResolver as useMALUICssVariablesResolver,
+  useMantineStyleNonce as useMALUIStyleNonce,
+  useMantineStylesTransform as useMALUIStylesTransform,
+  useMantineSxTransform as useMALUISxTransform,
+  useMantineEnv as useMALUIEnv,
+  useMantineIsHeadless as useMALUIIsHeadless,
+  useMantineDeduplicateInlineStyles as useMALUIDeduplicateInlineStyles,
+  useMantineWithStaticClasses as useMALUIWithStaticClasses,
+} from '@mantine/core';
+
+// ─── Type aliases ─────────────────────────────────────────────────────────────
+export type {
+  MantineTheme as MALUITheme,
+  MantineThemeOverride as MALUIThemeOverride,
+  MantineThemeColors as MALUIThemeColors,
+  MantineThemeColorsOverride as MALUIThemeColorsOverride,
+  MantineThemeComponent as MALUIThemeComponent,
+  MantineThemeComponents as MALUIThemeComponents,
+  MantineThemeOther as MALUIThemeOther,
+  MantineThemeSizesOverride as MALUIThemeSizesOverride,
+  MantineProviderProps as MALUIProviderProps,
+  MantineThemeProviderProps as MALUIThemeProviderProps,
+  MantineColorScheme as MALUIColorScheme,
+  MantineColorSchemeManager as MALUIColorSchemeManager,
+  MantineColor as MALUIColor,
+  MantineColorsTuple as MALUIColorsTuple,
+  MantineColorShade as MALUIColorShade,
+  MantinePrimaryShade as MALUIPrimaryShade,
+  MantineGradient as MALUIGradient,
+  MantineSize as MALUISize,
+  MantineBreakpoint as MALUIBreakpoint,
+  MantineBreakpointsValues as MALUIBreakpointsValues,
+  MantineFontSize as MALUIFontSize,
+  MantineFontSizesValues as MALUIFontSizesValues,
+  MantineFontWeight as MALUIFontWeight,
+  MantineFontWeightsValues as MALUIFontWeightsValues,
+  MantineLineHeight as MALUILineHeight,
+  MantineLineHeightValues as MALUILineHeightValues,
+  MantineRadius as MALUIRadius,
+  MantineRadiusValues as MALUIRadiusValues,
+  MantineShadow as MALUIShadow,
+  MantineShadowsValues as MALUIShadowsValues,
+  MantineSpacing as MALUISpacing,
+  MantineSpacingValues as MALUISpacingValues,
+  MantineStyleProp as MALUIStyleProp,
+  MantineStyleProps as MALUIStyleProps,
+  MantineStylesRecord as MALUIStylesRecord,
+  MantineStylesTransform as MALUIStylesTransform,
+  MantineComponent as MALUIComponent,
+  MantineComponentStaticProperties as MALUIComponentStaticProperties,
+  MantinePolymorphicComponent as MALUIPolymorphicComponent,
+  MantineLoader as MALUILoader,
+  MantineLoaderComponent as MALUILoaderComponent,
+  MantineLoadersRecord as MALUILoadersRecord,
+  MantineTransition as MALUITransition,
+  DefaultMantineColor as DefaultMALUIColor,
+  DefaultMantineSize as DefaultMALUISize,
+} from '@mantine/core';

@@ -10,7 +10,7 @@ import {
   Text,
   Title,
   useComputedColorScheme,
-  useMantineColorScheme,
+  useMALUIColorScheme,
 } from 'mal-ui/core';
 import { useDisclosure } from 'mal-ui/hooks';
 import { Spotlight, spotlight } from 'mal-ui/spotlight';
@@ -40,7 +40,7 @@ export function Shell({ children }: { children: ReactNode }) {
   const [opened, { toggle }] = useDisclosure(true);
   const pathname = usePathname();
   const router = useRouter();
-  const { setColorScheme } = useMantineColorScheme();
+  const { setColorScheme } = useMALUIColorScheme();
   const computedColorScheme = useComputedColorScheme('light');
 
   const toggleColorScheme = () => {

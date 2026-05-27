@@ -12,7 +12,7 @@ import {
   Text,
   ThemeIcon,
   Title,
-  useMantineTheme,
+  useMALUITheme,
 } from 'mal-ui/core';
 import {
   malBreakpoints,
@@ -34,7 +34,7 @@ const COLOR_NAMES = [
 ] as const;
 
 export default function ThemePage() {
-  const theme = useMantineTheme();
+  const theme = useMALUITheme();
 
   return (
     <Stack gap="lg">
