@@ -3,16 +3,16 @@ import type { MantineColorsTuple } from '@mantine/core';
 // ─── Brand Colors ────────────────────────────────────────────────────────────
 
 export const malBrand: MantineColorsTuple = [
-  '#e6f7ff',
-  '#bae7ff',
-  '#91d5ff',
-  '#69c0ff',
-  '#40a9ff',
-  '#1890ff',
-  '#096dd9',
-  '#0050b3',
-  '#003a8c',
-  '#002766',
+  '#f5eeff',
+  '#e5dbf7',
+  '#c6b4e8',
+  '#a68bd9',
+  '#8b68cc',
+  '#7a51c5',
+  '#6f42c1',
+  '#6138ac',
+  '#56319a',
+  '#4a2889',
 ];
 
 export const malSecondary: MantineColorsTuple = [
