@@ -1,173 +1,163 @@
 {
-    "name": "mal-ui",
-    "version": "0.1.0",
-    "description": "MAL UI — internal React components library for MAL Devs",
-    "type": "module",
-    "private": false,
-    "sideEffects": [
-        "**/*.css"
-    ],
-    "files": [
-        "dist",
-        "README.md"
-    ],
-    "publishConfig": {
-        "access": "restricted",
-        "registry": "https://npm.pkg.github.com"
+  "name": "mal-ui",
+  "version": "0.1.0",
+  "description": "MAL UI — internal React components library for MAL Devs",
+  "type": "module",
+  "private": false,
+  "sideEffects": ["**/*.css"],
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js"
-        },
-        "./core": {
-            "types": "./dist/core/index.d.ts",
-            "import": "./dist/core/index.js"
-        },
-        "./hooks": {
-            "types": "./dist/hooks/index.d.ts",
-            "import": "./dist/hooks/index.js"
-        },
-        "./form": {
-            "types": "./dist/form/index.d.ts",
-            "import": "./dist/form/index.js"
-        },
-        "./charts": {
-            "types": "./dist/charts/index.d.ts",
-            "import": "./dist/charts/index.js"
-        },
-        "./notifications": {
-            "types": "./dist/notifications/index.d.ts",
-            "import": "./dist/notifications/index.js"
-        },
-        "./spotlight": {
-            "types": "./dist/spotlight/index.d.ts",
-            "import": "./dist/spotlight/index.js"
-        },
-        "./code-highlight": {
-            "types": "./dist/code-highlight/index.d.ts",
-            "import": "./dist/code-highlight/index.js"
-        },
-        "./tiptap": {
-            "types": "./dist/tiptap/index.d.ts",
-            "import": "./dist/tiptap/index.js"
-        },
-        "./dropzone": {
-            "types": "./dist/dropzone/index.d.ts",
-            "import": "./dist/dropzone/index.js"
-        },
-        "./carousel": {
-            "types": "./dist/carousel/index.d.ts",
-            "import": "./dist/carousel/index.js"
-        },
-        "./nprogress": {
-            "types": "./dist/nprogress/index.d.ts",
-            "import": "./dist/nprogress/index.js"
-        },
-        "./modals": {
-            "types": "./dist/modals/index.d.ts",
-            "import": "./dist/modals/index.js"
-        },
-        "./schedule": {
-            "types": "./dist/schedule/index.d.ts",
-            "import": "./dist/schedule/index.js"
-        },
-        "./dates": {
-            "types": "./dist/dates/index.d.ts",
-            "import": "./dist/dates/index.js"
-        },
-        "./theme": {
-            "types": "./dist/theme/index.d.ts",
-            "import": "./dist/theme/index.js"
-        },
-        "./styles.css": "./dist/styles.css",
-        "./package.json": "./package.json"
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
     },
-    "scripts": {
-        "clean": "rm -rf dist",
-        "build": "bun run clean && bun run build:js && bun run build:types && bun run build:css",
-        "build:js": "bun run scripts/build.ts",
-        "build:types": "bun run scripts/build-types.ts",
-        "build:css": "bun run scripts/build-css.ts",
-        "typecheck": "tsc --noEmit",
-        "test": "bun test",
-        "upgrade:mantine": "bun run scripts/upgrade-mantine.ts",
-        "format": "biome format --write .",
-        "lint": "biome check ."
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js"
     },
-    "dependencies": {
-        "@mantine/core": "9.2.1",
-        "@mantine/hooks": "9.2.1",
-        "@mantine/form": "9.2.1",
-        "@mantine/charts": "9.2.1",
-        "@mantine/notifications": "9.2.1",
-        "@mantine/spotlight": "9.2.1",
-        "@mantine/code-highlight": "9.2.1",
-        "@mantine/tiptap": "9.2.1",
-        "@mantine/dropzone": "9.2.1",
-        "@mantine/carousel": "9.2.1",
-        "@mantine/nprogress": "9.2.1",
-        "@mantine/modals": "9.2.1",
-        "@mantine/dates": "9.2.1",
-        "@mantine/schedule": "9.2.1"
+    "./form": {
+      "types": "./dist/form/index.d.ts",
+      "import": "./dist/form/index.js"
     },
-    "peerDependencies": {
-        "react": ">=18.2.0",
-        "react-dom": ">=18.2.0",
-        "recharts": "^2.15.0",
-        "dayjs": "^1.11.0",
-        "embla-carousel-react": "^8.5.2",
-        "@tiptap/pm": "^2.10.0",
-        "@tiptap/react": "^2.10.0",
-        "@tiptap/extension-link": "^2.10.0",
-        "@tiptap/starter-kit": "^2.10.0"
+    "./charts": {
+      "types": "./dist/charts/index.d.ts",
+      "import": "./dist/charts/index.js"
     },
-    "peerDependenciesMeta": {
-        "recharts": {
-            "optional": true
-        },
-        "dayjs": {
-            "optional": true
-        },
-        "embla-carousel-react": {
-            "optional": true
-        },
-        "@tiptap/pm": {
-            "optional": true
-        },
-        "@tiptap/react": {
-            "optional": true
-        },
-        "@tiptap/extension-link": {
-            "optional": true
-        },
-        "@tiptap/starter-kit": {
-            "optional": true
-        }
+    "./notifications": {
+      "types": "./dist/notifications/index.d.ts",
+      "import": "./dist/notifications/index.js"
     },
-    "devDependencies": {
-        "@biomejs/biome": "^1.9.4",
-        "@types/bun": "latest",
-        "@types/react": "^19.0.0",
-        "@types/react-dom": "^19.0.0",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "recharts": "^2.15.0",
-        "dayjs": "^1.11.13",
-        "embla-carousel-react": "^8.5.2",
-        "@tiptap/pm": "^2.10.0",
-        "@tiptap/react": "^2.10.0",
-        "@tiptap/extension-link": "^2.10.0",
-        "@tiptap/starter-kit": "^2.10.0",
-        "typescript": "^5.7.0"
+    "./spotlight": {
+      "types": "./dist/spotlight/index.d.ts",
+      "import": "./dist/spotlight/index.js"
     },
-    "engines": {
-        "node": ">=20"
+    "./code-highlight": {
+      "types": "./dist/code-highlight/index.d.ts",
+      "import": "./dist/code-highlight/index.js"
     },
-    "keywords": [
-        "mal-ui",
-        "react",
-        "components",
-        "internal"
-    ]
+    "./tiptap": {
+      "types": "./dist/tiptap/index.d.ts",
+      "import": "./dist/tiptap/index.js"
+    },
+    "./dropzone": {
+      "types": "./dist/dropzone/index.d.ts",
+      "import": "./dist/dropzone/index.js"
+    },
+    "./carousel": {
+      "types": "./dist/carousel/index.d.ts",
+      "import": "./dist/carousel/index.js"
+    },
+    "./nprogress": {
+      "types": "./dist/nprogress/index.d.ts",
+      "import": "./dist/nprogress/index.js"
+    },
+    "./modals": {
+      "types": "./dist/modals/index.d.ts",
+      "import": "./dist/modals/index.js"
+    },
+    "./schedule": {
+      "types": "./dist/schedule/index.d.ts",
+      "import": "./dist/schedule/index.js"
+    },
+    "./dates": {
+      "types": "./dist/dates/index.d.ts",
+      "import": "./dist/dates/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "bun run clean && bun run build:js && bun run build:types && bun run build:css",
+    "build:js": "bun run scripts/build.ts",
+    "build:types": "bun run scripts/build-types.ts",
+    "build:css": "bun run scripts/build-css.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "upgrade:mantine": "bun run scripts/upgrade-mantine.ts",
+    "format": "biome format --write .",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "@mantine/core": "9.2.1",
+    "@mantine/hooks": "9.2.1",
+    "@mantine/form": "9.2.1",
+    "@mantine/charts": "9.2.1",
+    "@mantine/notifications": "9.2.1",
+    "@mantine/spotlight": "9.2.1",
+    "@mantine/code-highlight": "9.2.1",
+    "@mantine/tiptap": "9.2.1",
+    "@mantine/dropzone": "9.2.1",
+    "@mantine/carousel": "9.2.1",
+    "@mantine/nprogress": "9.2.1",
+    "@mantine/modals": "9.2.1",
+    "@mantine/dates": "9.2.1",
+    "@mantine/schedule": "9.2.1"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "recharts": "^2.15.0",
+    "dayjs": "^1.11.0",
+    "embla-carousel-react": "^8.5.2",
+    "@tiptap/pm": "^2.10.0",
+    "@tiptap/react": "^2.10.0",
+    "@tiptap/extension-link": "^2.10.0",
+    "@tiptap/starter-kit": "^2.10.0"
+  },
+  "peerDependenciesMeta": {
+    "recharts": {
+      "optional": true
+    },
+    "dayjs": {
+      "optional": true
+    },
+    "embla-carousel-react": {
+      "optional": true
+    },
+    "@tiptap/pm": {
+      "optional": true
+    },
+    "@tiptap/react": {
+      "optional": true
+    },
+    "@tiptap/extension-link": {
+      "optional": true
+    },
+    "@tiptap/starter-kit": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "dayjs": "^1.11.13",
+    "embla-carousel-react": "^8.5.2",
+    "@tiptap/pm": "^2.10.0",
+    "@tiptap/react": "^2.10.0",
+    "@tiptap/extension-link": "^2.10.0",
+    "@tiptap/starter-kit": "^2.10.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": ["mal-ui", "react", "components", "internal"]
 }

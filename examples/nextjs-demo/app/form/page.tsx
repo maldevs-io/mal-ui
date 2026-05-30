@@ -53,11 +53,20 @@ export default function FormPage() {
             <TextInput label="Email" {...form.getInputProps('email')} />
             <PasswordInput label="Password" {...form.getInputProps('password')} />
             <NumberInput label="Age" {...form.getInputProps('age')} />
-            <Select label="Role" data={['admin', 'editor', 'viewer']} {...form.getInputProps('role')} />
-            <Checkbox label="I accept the terms" {...form.getInputProps('terms', { type: 'checkbox' })} />
+            <Select
+              label="Role"
+              data={['admin', 'editor', 'viewer']}
+              {...form.getInputProps('role')}
+            />
+            <Checkbox
+              label="I accept the terms"
+              {...form.getInputProps('terms', { type: 'checkbox' })}
+            />
             <Group>
               <Button type="submit">Submit</Button>
-              <Button variant="subtle" onClick={() => form.reset()}>Reset</Button>
+              <Button variant="subtle" onClick={() => form.reset()}>
+                Reset
+              </Button>
             </Group>
             <Code block>{JSON.stringify(form.values, null, 2)}</Code>
           </Stack>

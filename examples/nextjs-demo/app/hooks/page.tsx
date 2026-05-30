@@ -107,14 +107,20 @@ export default function HooksPage() {
   const debouncedCallback = useDebouncedCallback((v: string) => v, 400);
   const [throttled] = useThrottledValue(value, 500);
   const previous = usePrevious(value);
-  const [uncontrolled, setUncontrolled] = useUncontrolled({ defaultValue: 'default', finalValue: 'final' });
+  const [uncontrolled, setUncontrolled] = useUncontrolled({
+    defaultValue: 'default',
+    finalValue: 'final',
+  });
 
   // ─── Clipboard ─────────────────────────────────────────────
   const clipboard = useClipboard({ timeout: 1000 });
 
   // ─── Collections ────────────────────────────────────────────
   const [list, listHandlers] = useListState(['Item A', 'Item B', 'Item C']);
-  const mapHook = useMap<string, number>([['apples', 3], ['bananas', 5]]);
+  const mapHook = useMap<string, number>([
+    ['apples', 3],
+    ['bananas', 5],
+  ]);
   const setHook = useSet<string>(['react', 'mantine']);
   const queueHook = useQueue<string>({ initialValues: ['First', 'Second'], limit: 3 });
   const [stateObj, setStateObj] = useSetState({ name: 'Anas', age: 25 });
@@ -122,7 +128,10 @@ export default function HooksPage() {
 
   // ─── Storage ────────────────────────────────────────────────
   const [stored, setStored] = useLocalStorage({ key: 'mal-demo-hooks', defaultValue: 'hello' });
-  const [sessionStored, setSessionStored] = useSessionStorage({ key: 'mal-session', defaultValue: 'world' });
+  const [sessionStored, setSessionStored] = useSessionStorage({
+    key: 'mal-session',
+    defaultValue: 'world',
+  });
 
   // ─── DOM / Element ──────────────────────────────────────────
   const { ref: sizeRef, width, height } = useElementSize();
@@ -170,7 +179,9 @@ export default function HooksPage() {
   const { ref: fsRef, toggle: toggleFs, fullscreen } = useFullscreenElement<HTMLDivElement>();
 
   // ─── Fetch ──────────────────────────────────────────────────
-  const { data: fetchData, loading: fetchLoading } = useFetch<{ fact: string }>('https://catfact.ninja/fact');
+  const { data: fetchData, loading: fetchLoading } = useFetch<{ fact: string }>(
+    'https://catfact.ninja/fact',
+  );
 
   // ─── Favicon ────────────────────────────────────────────────
   useFavicon('/favicon.ico');
@@ -189,7 +200,9 @@ export default function HooksPage() {
   return (
     <Stack gap="lg">
       <Title order={2}>Hooks</Title>
-      <Text size="sm" c="dimmed">Demonstrating 60+ hooks from mal-ui/hooks</Text>
+      <Text size="sm" c="dimmed">
+        Demonstrating 60+ hooks from mal-ui/hooks
+      </Text>
 
       {/* ─── State & UI ─────────────────────────────────────── */}
       <Section title="State & UI">
@@ -208,7 +221,9 @@ export default function HooksPage() {
           <Button onClick={() => setToggled()}>useToggle: {toggled}</Button>
           <Button onClick={forceUpdate}>useForceUpdate</Button>
           <Badge>useId: {id}</Badge>
-          <Badge color={isFirstRender ? 'red' : 'green'}>isFirstRender: {String(isFirstRender)}</Badge>
+          <Badge color={isFirstRender ? 'red' : 'green'}>
+            isFirstRender: {String(isFirstRender)}
+          </Badge>
         </Group>
       </Section>
 
@@ -220,15 +235,17 @@ export default function HooksPage() {
           onChange={(e) => setValue(e.currentTarget.value)}
         />
         <Group>
-          <Text size="sm">debounced: <Code>{debounced || '∅'}</Code></Text>
-          <Text size="sm">throttled: <Code>{throttled || '∅'}</Code></Text>
-          <Text size="sm">previous: <Code>{previous || '∅'}</Code></Text>
+          <Text size="sm">
+            debounced: <Code>{debounced || '∅'}</Code>
+          </Text>
+          <Text size="sm">
+            throttled: <Code>{throttled || '∅'}</Code>
+          </Text>
+          <Text size="sm">
+            previous: <Code>{previous || '∅'}</Code>
+          </Text>
         </Group>
-        <TextInput
-          label="useInputState"
-          value={inputVal}
-          onChange={setInputVal}
-        />
+        <TextInput label="useInputState" value={inputVal} onChange={setInputVal} />
         <TextInput
           label="useDebouncedState (400ms)"
           defaultValue={debouncedState}
@@ -255,52 +272,88 @@ export default function HooksPage() {
 
       {/* ─── Collections ────────────────────────────────────── */}
       <Section title="Collections (useListState, useMap, useSet, useQueue, useSetState, useStateHistory)">
-        <Text fw={600} size="sm">useListState</Text>
+        <Text fw={600} size="sm">
+          useListState
+        </Text>
         <Group>
           {list.map((item, i) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: demo list may contain duplicates
             <Badge key={i}>{item}</Badge>
           ))}
-          <Button size="xs" onClick={() => listHandlers.append('New')}>append</Button>
-          <Button size="xs" onClick={() => listHandlers.pop()}>pop</Button>
+          <Button size="xs" onClick={() => listHandlers.append('New')}>
+            append
+          </Button>
+          <Button size="xs" onClick={() => listHandlers.pop()}>
+            pop
+          </Button>
         </Group>
 
-        <Text fw={600} size="sm">useMap</Text>
+        <Text fw={600} size="sm">
+          useMap
+        </Text>
         <Group>
           {[...mapHook.entries()].map(([k, v]) => (
-            <Badge key={k}>{k}: {v}</Badge>
+            <Badge key={k}>
+              {k}: {v}
+            </Badge>
           ))}
-          <Button size="xs" onClick={() => mapHook.set('oranges', 7)}>set oranges=7</Button>
+          <Button size="xs" onClick={() => mapHook.set('oranges', 7)}>
+            set oranges=7
+          </Button>
         </Group>
 
-        <Text fw={600} size="sm">useSet</Text>
+        <Text fw={600} size="sm">
+          useSet
+        </Text>
         <Group>
           {[...setHook].map((v) => (
             <Badge key={v}>{v}</Badge>
           ))}
-          <Button size="xs" onClick={() => setHook.add('hooks')}>add 'hooks'</Button>
+          <Button size="xs" onClick={() => setHook.add('hooks')}>
+            add 'hooks'
+          </Button>
         </Group>
 
-        <Text fw={600} size="sm">useQueue (limit 3)</Text>
+        <Text fw={600} size="sm">
+          useQueue (limit 3)
+        </Text>
         <Group>
           {queueHook.state.map((v: string, i: number) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: demo queue may contain duplicates
             <Badge key={i}>{v}</Badge>
           ))}
-          <Button size="xs" onClick={() => queueHook.add(`#${queueHook.state.length + 1}`)}>add</Button>
-          <Button size="xs" onClick={() => queueHook.update((s: string[]) => s.slice(1))}>shift</Button>
+          <Button size="xs" onClick={() => queueHook.add(`#${queueHook.state.length + 1}`)}>
+            add
+          </Button>
+          <Button size="xs" onClick={() => queueHook.update((s: string[]) => s.slice(1))}>
+            shift
+          </Button>
         </Group>
 
-        <Text fw={600} size="sm">useSetState</Text>
+        <Text fw={600} size="sm">
+          useSetState
+        </Text>
         <Group>
           <Code>{JSON.stringify(stateObj)}</Code>
-          <Button size="xs" onClick={() => setStateObj({ age: stateObj.age + 1 })}>age++</Button>
+          <Button size="xs" onClick={() => setStateObj({ age: stateObj.age + 1 })}>
+            age++
+          </Button>
         </Group>
 
-        <Text fw={600} size="sm">useStateHistory</Text>
+        <Text fw={600} size="sm">
+          useStateHistory
+        </Text>
         <Group>
           <Badge>current: {historyValue}</Badge>
-          <Button size="xs" onClick={() => historyHandlers.set(historyValue + 1)}>+1</Button>
-          <Button size="xs" onClick={() => historyHandlers.back()}>undo</Button>
-          <Button size="xs" onClick={() => historyHandlers.forward()}>redo</Button>
+          <Button size="xs" onClick={() => historyHandlers.set(historyValue + 1)}>
+            +1
+          </Button>
+          <Button size="xs" onClick={() => historyHandlers.back()}>
+            undo
+          </Button>
+          <Button size="xs" onClick={() => historyHandlers.forward()}>
+            redo
+          </Button>
         </Group>
       </Section>
 
@@ -320,15 +373,33 @@ export default function HooksPage() {
 
       {/* ─── DOM / Element ──────────────────────────────────── */}
       <Section title="DOM & Element">
-        <div ref={sizeRef} style={{ resize: 'both', overflow: 'auto', border: '1px dashed var(--mantine-color-dimmed)', padding: 8 }}>
+        <div
+          ref={sizeRef}
+          style={{
+            resize: 'both',
+            overflow: 'auto',
+            border: '1px dashed var(--mantine-color-dimmed)',
+            padding: 8,
+          }}
+        >
           useElementSize → {Math.round(width)} × {Math.round(height)}
         </div>
 
-        <Paper ref={hoverRef} withBorder p="sm" bg={hovered ? 'var(--mantine-color-blue-light)' : undefined}>
+        <Paper
+          ref={hoverRef}
+          withBorder
+          p="sm"
+          bg={hovered ? 'var(--mantine-color-blue-light)' : undefined}
+        >
           useHover: {hovered ? '✓ hovered' : 'hover me'}
         </Paper>
 
-        <Paper ref={focusRef} withBorder p="sm" bg={focused ? 'var(--mantine-color-green-light)' : undefined}>
+        <Paper
+          ref={focusRef}
+          withBorder
+          p="sm"
+          bg={focused ? 'var(--mantine-color-green-light)' : undefined}
+        >
           <TextInput placeholder="useFocusWithin — click here" />
           <Text size="xs">{focused ? 'focused!' : 'not focused'}</Text>
         </Paper>
@@ -352,7 +423,9 @@ export default function HooksPage() {
           <Badge>scroll target</Badge>
         </div>
 
-        <Text size="sm">useTextSelection: <Code>{textSelection?.toString() || 'select some text'}</Code></Text>
+        <Text size="sm">
+          useTextSelection: <Code>{textSelection?.toString() || 'select some text'}</Code>
+        </Text>
       </Section>
 
       {/* ─── Selection ──────────────────────────────────────── */}
@@ -368,10 +441,20 @@ export default function HooksPage() {
               {item}
             </Button>
           ))}
-          <Button size="xs" variant="light" onClick={() => selectionHandlers.setSelection(['A', 'B', 'C', 'D', 'E'])}>all</Button>
-          <Button size="xs" variant="light" onClick={() => selectionHandlers.resetSelection()}>clear</Button>
+          <Button
+            size="xs"
+            variant="light"
+            onClick={() => selectionHandlers.setSelection(['A', 'B', 'C', 'D', 'E'])}
+          >
+            all
+          </Button>
+          <Button size="xs" variant="light" onClick={() => selectionHandlers.resetSelection()}>
+            clear
+          </Button>
         </Group>
-        <Text size="sm">Selected: <Code>{JSON.stringify(selected)}</Code></Text>
+        <Text size="sm">
+          Selected: <Code>{JSON.stringify(selected)}</Code>
+        </Text>
       </Section>
 
       {/* ─── Move ───────────────────────────────────────────── */}
@@ -399,12 +482,19 @@ export default function HooksPage() {
             }}
           />
         </div>
-        <Text size="sm">x: {moveValue.x.toFixed(2)}, y: {moveValue.y.toFixed(2)}</Text>
+        <Text size="sm">
+          x: {moveValue.x.toFixed(2)}, y: {moveValue.y.toFixed(2)}
+        </Text>
       </Section>
 
       {/* ─── Fullscreen ─────────────────────────────────────── */}
       <Section title="useFullscreenElement">
-        <Paper ref={fsRef} withBorder p="md" bg={fullscreen ? 'var(--mantine-color-dark-7)' : undefined}>
+        <Paper
+          ref={fsRef}
+          withBorder
+          p="md"
+          bg={fullscreen ? 'var(--mantine-color-dark-7)' : undefined}
+        >
           <Button onClick={toggleFs}>{fullscreen ? 'Exit fullscreen' : 'Go fullscreen'}</Button>
         </Paper>
       </Section>
@@ -412,12 +502,16 @@ export default function HooksPage() {
       {/* ─── Pagination ─────────────────────────────────────── */}
       <Section title="usePagination">
         <Group>
-          <Button size="xs" onClick={pagination.previous}>prev</Button>
+          <Button size="xs" onClick={pagination.previous}>
+            prev
+          </Button>
           {pagination.range.map((item, i) =>
             item === 'dots' ? (
+              // biome-ignore lint/suspicious/noArrayIndexKey: pagination range has repeated dots
               <Text key={i}>…</Text>
             ) : (
               <Button
+                // biome-ignore lint/suspicious/noArrayIndexKey: pagination range has repeated dots
                 key={i}
                 size="xs"
                 variant={item === pagination.active ? 'filled' : 'default'}
@@ -425,17 +519,23 @@ export default function HooksPage() {
               >
                 {item}
               </Button>
-            )
+            ),
           )}
-          <Button size="xs" onClick={pagination.next}>next</Button>
+          <Button size="xs" onClick={pagination.next}>
+            next
+          </Button>
         </Group>
       </Section>
 
       {/* ─── Timing ─────────────────────────────────────────── */}
       <Section title="Timing (useInterval, useTimeout)">
         <Group>
-          <Button onClick={interval.start} disabled={interval.active}>start interval (1s → counter++)</Button>
-          <Button onClick={interval.stop} disabled={!interval.active}>stop</Button>
+          <Button onClick={interval.start} disabled={interval.active}>
+            start interval (1s → counter++)
+          </Button>
+          <Button onClick={interval.stop} disabled={!interval.active}>
+            stop
+          </Button>
           <Badge>{interval.active ? 'running' : 'stopped'}</Badge>
         </Group>
         <Group>
@@ -446,17 +546,21 @@ export default function HooksPage() {
 
       {/* ─── Fetch ──────────────────────────────────────────── */}
       <Section title="useFetch">
-        <Text size="sm">
-          {fetchLoading ? 'Loading...' : fetchData?.fact ?? 'No data'}
-        </Text>
+        <Text size="sm">{fetchLoading ? 'Loading...' : (fetchData?.fact ?? 'No data')}</Text>
       </Section>
 
       {/* ─── Hash ───────────────────────────────────────────── */}
       <Section title="useHash">
         <Group>
-          <Text size="sm">Current hash: <Code>{hash || '#(empty)'}</Code></Text>
-          <Button size="xs" onClick={() => setHash('#section-1')}>#section-1</Button>
-          <Button size="xs" onClick={() => setHash('#section-2')}>#section-2</Button>
+          <Text size="sm">
+            Current hash: <Code>{hash || '#(empty)'}</Code>
+          </Text>
+          <Button size="xs" onClick={() => setHash('#section-1')}>
+            #section-1
+          </Button>
+          <Button size="xs" onClick={() => setHash('#section-2')}>
+            #section-2
+          </Button>
         </Group>
       </Section>
 
@@ -465,11 +569,15 @@ export default function HooksPage() {
         <SimpleGrid cols={{ base: 2, sm: 3, md: 4 }}>
           <Badge>useOs: {os}</Badge>
           <Badge color={idle ? 'gray' : 'green'}>useIdle: {String(idle)}</Badge>
-          <Badge color={network.online ? 'green' : 'red'}>network: {network.online ? 'online' : 'offline'}</Badge>
+          <Badge color={network.online ? 'green' : 'red'}>
+            network: {network.online ? 'online' : 'offline'}
+          </Badge>
           <Badge>mediaQuery md+: {String(isWide)}</Badge>
           <Badge>colorScheme: {colorScheme}</Badge>
           <Badge>mounted: {String(mounted)}</Badge>
-          <Badge>viewport: {vw}×{vh}</Badge>
+          <Badge>
+            viewport: {vw}×{vh}
+          </Badge>
           <Badge>scroll-y: {Math.round(scroll.y)}</Badge>
           <Badge>docVisibility: {docVisibility}</Badge>
           <Badge color={orientation.type?.includes('portrait') ? 'blue' : 'orange'}>
@@ -479,7 +587,9 @@ export default function HooksPage() {
           <Badge color={pageLeft ? 'red' : 'green'}>pageLeave: {String(pageLeft)}</Badge>
         </SimpleGrid>
         <Group>
-          <Button size="xs" onClick={() => scrollTo({ y: 0 })}>scroll to top</Button>
+          <Button size="xs" onClick={() => scrollTo({ y: 0 })}>
+            scroll to top
+          </Button>
         </Group>
       </Section>
     </Stack>

@@ -8,7 +8,7 @@
  *  - Keep React, recharts, tiptap, embla-carousel and dayjs external (peer deps).
  *  - ESM-only with code splitting → shared chunks for true tree-shaking.
  */
-import { rm, mkdir } from 'node:fs/promises';
+import { mkdir, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const ROOT = resolve(import.meta.dir, '..');

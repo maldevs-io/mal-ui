@@ -15,8 +15,12 @@ export default function SpotlightPage() {
           </Text>
           <Group>
             <Button onClick={() => spotlight.open()}>Open spotlight</Button>
-            <Button variant="subtle" onClick={() => spotlight.close()}>Close</Button>
-            <Button variant="light" onClick={() => spotlight.toggle()}>Toggle</Button>
+            <Button variant="subtle" onClick={() => spotlight.close()}>
+              Close
+            </Button>
+            <Button variant="light" onClick={() => spotlight.toggle()}>
+              Toggle
+            </Button>
           </Group>
         </Stack>
       </Card>

@@ -1,5 +1,6 @@
 'use client';
 
+import { Card, Group, SimpleGrid, Stack, Text, Title } from 'mal-ui/core';
 import {
   Calendar,
   DateInput,
@@ -18,7 +19,6 @@ import {
   YearPicker,
   YearPickerInput,
 } from 'mal-ui/dates';
-import { Card, Group, SimpleGrid, Stack, Text, Title } from 'mal-ui/core';
 import { useState } from 'react';
 
 export default function DatesPage() {
@@ -39,15 +39,21 @@ export default function DatesPage() {
             <Title order={4}>Inline Pickers</Title>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }}>
               <Stack gap="xs">
-                <Text fw={600} size="sm">Calendar</Text>
+                <Text fw={600} size="sm">
+                  Calendar
+                </Text>
                 <Calendar />
               </Stack>
               <Stack gap="xs">
-                <Text fw={600} size="sm">DatePicker (range)</Text>
+                <Text fw={600} size="sm">
+                  DatePicker (range)
+                </Text>
                 <DatePicker type="range" value={dateRange} onChange={setDateRange} />
               </Stack>
               <Stack gap="xs">
-                <Text fw={600} size="sm">MiniCalendar</Text>
+                <Text fw={600} size="sm">
+                  MiniCalendar
+                </Text>
                 <MiniCalendar />
               </Stack>
             </SimpleGrid>
@@ -71,10 +77,7 @@ export default function DatesPage() {
                 value={dateValue}
                 onChange={setDateValue}
               />
-              <DateTimePicker
-                label="DateTimePicker"
-                placeholder="Pick date & time"
-              />
+              <DateTimePicker label="DateTimePicker" placeholder="Pick date & time" />
               <MonthPickerInput
                 label="MonthPickerInput"
                 placeholder="Pick a month"
@@ -97,11 +100,15 @@ export default function DatesPage() {
             <Title order={4}>Month & Year Pickers</Title>
             <SimpleGrid cols={{ base: 1, sm: 2 }}>
               <Stack gap="xs">
-                <Text fw={600} size="sm">MonthPicker</Text>
+                <Text fw={600} size="sm">
+                  MonthPicker
+                </Text>
                 <MonthPicker value={monthValue} onChange={setMonthValue} />
               </Stack>
               <Stack gap="xs">
-                <Text fw={600} size="sm">YearPicker</Text>
+                <Text fw={600} size="sm">
+                  YearPicker
+                </Text>
                 <YearPicker value={yearValue} onChange={setYearValue} />
               </Stack>
             </SimpleGrid>
@@ -120,13 +127,29 @@ export default function DatesPage() {
               />
               <TimePicker label="TimePicker" />
               <Stack gap="xs">
-                <Text fw={600} size="sm">TimeValue display</Text>
+                <Text fw={600} size="sm">
+                  TimeValue display
+                </Text>
                 <TimeValue value="14:30:00" />
               </Stack>
             </SimpleGrid>
             <Stack gap="xs">
-              <Text fw={600} size="sm">TimeGrid</Text>
-              <TimeGrid data={['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00']} />
+              <Text fw={600} size="sm">
+                TimeGrid
+              </Text>
+              <TimeGrid
+                data={[
+                  '08:00',
+                  '09:00',
+                  '10:00',
+                  '11:00',
+                  '12:00',
+                  '13:00',
+                  '14:00',
+                  '15:00',
+                  '16:00',
+                ]}
+              />
             </Stack>
           </Stack>
         </Card>
@@ -144,10 +167,30 @@ export default function DatesPage() {
           <Stack gap="xs">
             <Title order={4}>Current values</Title>
             <Group>
-              <Text size="sm">Date: <Text span fw={600}>{dateValue ?? 'none'}</Text></Text>
-              <Text size="sm">Month: <Text span fw={600}>{monthValue ?? 'none'}</Text></Text>
-              <Text size="sm">Year: <Text span fw={600}>{yearValue ?? 'none'}</Text></Text>
-              <Text size="sm">Time: <Text span fw={600}>{timeValue || 'none'}</Text></Text>
+              <Text size="sm">
+                Date:{' '}
+                <Text span fw={600}>
+                  {dateValue ?? 'none'}
+                </Text>
+              </Text>
+              <Text size="sm">
+                Month:{' '}
+                <Text span fw={600}>
+                  {monthValue ?? 'none'}
+                </Text>
+              </Text>
+              <Text size="sm">
+                Year:{' '}
+                <Text span fw={600}>
+                  {yearValue ?? 'none'}
+                </Text>
+              </Text>
+              <Text size="sm">
+                Time:{' '}
+                <Text span fw={600}>
+                  {timeValue || 'none'}
+                </Text>
+              </Text>
             </Group>
           </Stack>
         </Card>

@@ -8,13 +8,11 @@ export {
   MantineContext as MALUIContext,
   MantineThemeProvider as MALUIThemeProvider,
   HeadlessMantineProvider as HeadlessMALUIProvider,
-
   // ─── Theme utilities ────────────────────────────────────────────────────────
   mantineHtmlProps as MALUIHtmlProps,
   mergeMantineTheme as mergeMALUITheme,
   validateMantineTheme as validateMALUITheme,
   isMantineColorScheme as isMALUIColorScheme,
-
   // ─── Hooks (core-level) ─────────────────────────────────────────────────────
   useMantineTheme as useMALUITheme,
   useSafeMantineTheme as useSafeMALUITheme,

@@ -35,7 +35,9 @@ export default function ModalsPage() {
           <Button onClick={openConfirm}>Confirm modal</Button>
           <Button onClick={openContent}>Content modal</Button>
         </Group>
-        <Text mt="md" size="sm" c="dimmed">Last name input: {name || '∅'}</Text>
+        <Text mt="md" size="sm" c="dimmed">
+          Last name input: {name || '∅'}
+        </Text>
       </Card>
     </Stack>
   );

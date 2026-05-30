@@ -73,7 +73,12 @@ export function Shell({ children }: { children: ReactNode }) {
               <Title order={4}>MALUI Demo</Title>
             </Group>
             <Group>
-              <Text size="sm" c="dimmed" onClick={() => spotlight.open()} style={{ cursor: 'pointer' }}>
+              <Text
+                size="sm"
+                c="dimmed"
+                onClick={() => spotlight.open()}
+                style={{ cursor: 'pointer' }}
+              >
                 ⌘K
               </Text>
               <ActionIcon

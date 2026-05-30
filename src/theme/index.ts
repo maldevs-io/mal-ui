@@ -1,8 +1,8 @@
-import { createTheme, virtualColor, type MantineThemeOverride } from '@mantine/core';
+import { type MantineThemeOverride, createTheme, virtualColor } from '@mantine/core';
 import {
   malBreakpoints,
-  malColors,
   malColorTokens,
+  malColors,
   malFontSizes,
   malLineHeights,
   malRadiusTokens,
@@ -46,15 +46,13 @@ export const malTheme: MantineThemeOverride = createTheme({
   luminanceThreshold: 0.3,
 
   // ─── Typography ──────────────────────────────────────────────────────
-  fontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif',
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif',
   fontFamilyMonospace:
     'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace',
   fontSizes: malFontSizes,
   lineHeights: malLineHeights,
   headings: {
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif',
     fontWeight: '600',
     sizes: {
       h1: { fontSize: '2.125rem', lineHeight: '1.3' },

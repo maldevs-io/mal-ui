@@ -1,9 +1,9 @@
 'use client';
 
-import { Card, Stack, Title } from 'mal-ui/core';
-import { Link, RichTextEditor } from 'mal-ui/tiptap';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { Card, Stack, Title } from 'mal-ui/core';
+import { Link, RichTextEditor } from 'mal-ui/tiptap';
 
 export default function TiptapPage() {
   const editor = useEditor({

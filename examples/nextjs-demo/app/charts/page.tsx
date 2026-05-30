@@ -49,13 +49,38 @@ export default function ChartsPage() {
       <Title order={2}>Charts</Title>
       <SimpleGrid cols={{ base: 1, md: 2 }}>
         <Box title="LineChart">
-          <LineChart h={220} data={months} dataKey="date" series={[{ name: 'Apples', color: 'indigo.6' }, { name: 'Oranges', color: 'orange.6' }]} curveType="natural" />
+          <LineChart
+            h={220}
+            data={months}
+            dataKey="date"
+            series={[
+              { name: 'Apples', color: 'indigo.6' },
+              { name: 'Oranges', color: 'orange.6' },
+            ]}
+            curveType="natural"
+          />
         </Box>
         <Box title="AreaChart">
-          <AreaChart h={220} data={months} dataKey="date" series={[{ name: 'Apples', color: 'indigo.6' }, { name: 'Tomatoes', color: 'red.6' }]} />
+          <AreaChart
+            h={220}
+            data={months}
+            dataKey="date"
+            series={[
+              { name: 'Apples', color: 'indigo.6' },
+              { name: 'Tomatoes', color: 'red.6' },
+            ]}
+          />
         </Box>
         <Box title="BarChart">
-          <BarChart h={220} data={months} dataKey="date" series={[{ name: 'Apples', color: 'indigo.6' }, { name: 'Oranges', color: 'orange.6' }]} />
+          <BarChart
+            h={220}
+            data={months}
+            dataKey="date"
+            series={[
+              { name: 'Apples', color: 'indigo.6' },
+              { name: 'Oranges', color: 'orange.6' },
+            ]}
+          />
         </Box>
         <Box title="CompositeChart">
           <CompositeChart
@@ -68,19 +93,52 @@ export default function ChartsPage() {
             ]}
           />
         </Box>
-        <Box title="DonutChart"><DonutChart data={donut} /></Box>
-        <Box title="PieChart"><PieChart data={donut} withLabels /></Box>
+        <Box title="DonutChart">
+          <DonutChart data={donut} />
+        </Box>
+        <Box title="PieChart">
+          <PieChart data={donut} withLabels />
+        </Box>
         <Box title="RadarChart">
-          <RadarChart h={220} data={radar} dataKey="product" series={[{ name: 'alpha', color: 'blue.4' }, { name: 'beta', color: 'red.4' }]} />
+          <RadarChart
+            h={220}
+            data={radar}
+            dataKey="product"
+            series={[
+              { name: 'alpha', color: 'blue.4' },
+              { name: 'beta', color: 'red.4' },
+            ]}
+          />
         </Box>
         <Box title="ScatterChart">
-          <ScatterChart h={220} data={scatter} dataKey={{ x: 'x', y: 'y' }} xAxisLabel="x" yAxisLabel="y" />
+          <ScatterChart
+            h={220}
+            data={scatter}
+            dataKey={{ x: 'x', y: 'y' }}
+            xAxisLabel="x"
+            yAxisLabel="y"
+          />
         </Box>
         <Box title="BubbleChart">
-          <BubbleChart h={80} data={bubbleData} range={[10, 200]} label="Bubbles" dataKey={{ x: 'hour', y: 'index', z: 'value' }} color="lime.6" />
+          <BubbleChart
+            h={80}
+            data={bubbleData}
+            range={[10, 200]}
+            label="Bubbles"
+            dataKey={{ x: 'hour', y: 'index', z: 'value' }}
+            color="lime.6"
+          />
         </Box>
         <Box title="Sparkline">
-          <Sparkline w={200} h={60} data={[10, 20, 40, 20, 40, 10, 50]} curveType="natural" color="blue" fillOpacity={0.3} strokeWidth={2} />
+          <Sparkline
+            w={200}
+            h={60}
+            data={[10, 20, 40, 20, 40, 10, 50]}
+            curveType="natural"
+            color="blue"
+            fillOpacity={0.3}
+            strokeWidth={2}
+          />
         </Box>
       </SimpleGrid>
     </Stack>
@@ -90,7 +148,9 @@ export default function ChartsPage() {
 function Box({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <Card withBorder padding="md">
-      <Title order={5} mb="sm">{title}</Title>
+      <Title order={5} mb="sm">
+        {title}
+      </Title>
       {children}
     </Card>
   );

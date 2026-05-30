@@ -57,4 +57,4 @@ run('bun', ['install']);
 run('bun', ['run', 'build']);
 run('bun', ['test']);
 
-console.log(`\n[upgrade] done. Commit changes and open a PR.`);
+console.log('\n[upgrade] done. Commit changes and open a PR.');

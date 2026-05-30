@@ -14,7 +14,9 @@ export default function NprogressPage() {
           <Button onClick={() => nprogress.increment()}>+10%</Button>
           <Button onClick={() => nprogress.decrement()}>-10%</Button>
           <Button onClick={() => nprogress.set(50)}>Set 50%</Button>
-          <Button color="red" onClick={() => nprogress.reset()}>Reset</Button>
+          <Button color="red" onClick={() => nprogress.reset()}>
+            Reset
+          </Button>
         </Group>
       </Card>
     </Stack>

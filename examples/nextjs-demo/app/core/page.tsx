@@ -3,8 +3,8 @@
 import {
   Accordion,
   ActionIcon,
-  Anchor,
   Alert,
+  Anchor,
   AspectRatio,
   Avatar,
   Badge,
@@ -92,13 +92,21 @@ export default function CorePage() {
   const [loadingVisible, { toggle: toggleLoading }] = useDisclosure(false);
 
   const treeData = [
-    { label: 'src', value: 'src', children: [
-      { label: 'components', value: 'components', children: [
-        { label: 'Button.tsx', value: 'button' },
-        { label: 'Card.tsx', value: 'card' },
-      ]},
-      { label: 'index.ts', value: 'index' },
-    ]},
+    {
+      label: 'src',
+      value: 'src',
+      children: [
+        {
+          label: 'components',
+          value: 'components',
+          children: [
+            { label: 'Button.tsx', value: 'button' },
+            { label: 'Card.tsx', value: 'card' },
+          ],
+        },
+        { label: 'index.ts', value: 'index' },
+      ],
+    },
   ];
 
   return (
@@ -119,7 +127,9 @@ export default function CorePage() {
           <Button variant="subtle">Subtle</Button>
           <Button variant="gradient">Gradient</Button>
           <Button color="red">Danger</Button>
-          <ActionIcon variant="filled" size="lg">★</ActionIcon>
+          <ActionIcon variant="filled" size="lg">
+            ★
+          </ActionIcon>
           <CopyButton value="Hello world!">
             {({ copied, copy }) => (
               <Button color={copied ? 'teal' : 'blue'} onClick={copy} size="xs">
@@ -133,7 +143,9 @@ export default function CorePage() {
         </Group>
         <Group>
           <Menu shadow="md" width={200}>
-            <Menu.Target><Button>Menu</Button></Menu.Target>
+            <Menu.Target>
+              <Button>Menu</Button>
+            </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>Actions</Menu.Label>
               <Menu.Item>Settings</Menu.Item>
@@ -143,8 +155,12 @@ export default function CorePage() {
             </Menu.Dropdown>
           </Menu>
           <HoverCard shadow="md">
-            <HoverCard.Target><Button variant="outline">Hover card</Button></HoverCard.Target>
-            <HoverCard.Dropdown><Text size="sm">Hover card content</Text></HoverCard.Dropdown>
+            <HoverCard.Target>
+              <Button variant="outline">Hover card</Button>
+            </HoverCard.Target>
+            <HoverCard.Dropdown>
+              <Text size="sm">Hover card content</Text>
+            </HoverCard.Dropdown>
           </HoverCard>
         </Group>
       </Section>
@@ -187,14 +203,22 @@ export default function CorePage() {
             <AspectRatio ratio={16 / 9}>
               <Image radius="md" src="https://placehold.co/300x170" alt="placeholder" />
             </AspectRatio>
-            <Text fw={600} mt="sm">Card title</Text>
-            <Text size="sm" c="dimmed">Description text.</Text>
+            <Text fw={600} mt="sm">
+              Card title
+            </Text>
+            <Text size="sm" c="dimmed">
+              Description text.
+            </Text>
           </Card>
           <Stack>
             <Group>
               <Avatar>MA</Avatar>
-              <Avatar color="cyan" radius="xl">AB</Avatar>
-              <Indicator><ThemeIcon>★</ThemeIcon></Indicator>
+              <Avatar color="cyan" radius="xl">
+                AB
+              </Avatar>
+              <Indicator>
+                <ThemeIcon>★</ThemeIcon>
+              </Indicator>
               <Badge>Badge</Badge>
               <Badge variant="outline">Outline</Badge>
               <Pill>Pill</Pill>
@@ -202,15 +226,26 @@ export default function CorePage() {
             </Group>
             <Progress value={60} />
             <Progress.Root size="xl">
-              <Progress.Section value={35} color="cyan"><Progress.Label>Docs</Progress.Label></Progress.Section>
-              <Progress.Section value={28} color="pink"><Progress.Label>Code</Progress.Label></Progress.Section>
+              <Progress.Section value={35} color="cyan">
+                <Progress.Label>Docs</Progress.Label>
+              </Progress.Section>
+              <Progress.Section value={28} color="pink">
+                <Progress.Label>Code</Progress.Label>
+              </Progress.Section>
             </Progress.Root>
-            <RingProgress sections={[{ value: 40, color: 'blue' }, { value: 25, color: 'orange' }]} />
+            <RingProgress
+              sections={[
+                { value: 40, color: 'blue' },
+                { value: 25, color: 'orange' },
+              ]}
+            />
             <Skeleton height={20} width={200} />
             <Loader size="sm" />
             <Pagination total={10} />
             <NumberFormatter value={1234567.89} prefix="$" thousandSeparator />
-            <Highlight highlight={['important', 'text']}>This is important highlighted text for demo</Highlight>
+            <Highlight highlight={['important', 'text']}>
+              This is important highlighted text for demo
+            </Highlight>
             <Mark>Marked text</Mark>
             <Code>const x = 42;</Code>
             <Code block>{`function hello() {\n  return 'world';\n}`}</Code>
@@ -222,18 +257,39 @@ export default function CorePage() {
       {/* ─── Layout ──────────────────────────────────────────── */}
       <Section title="Layout">
         <Grid>
-          <Grid.Col span={4}><Paper withBorder p="xs"><Center>4 cols</Center></Paper></Grid.Col>
-          <Grid.Col span={4}><Paper withBorder p="xs"><Center>4 cols</Center></Paper></Grid.Col>
-          <Grid.Col span={4}><Paper withBorder p="xs"><Center>4 cols</Center></Paper></Grid.Col>
+          <Grid.Col span={4}>
+            <Paper withBorder p="xs">
+              <Center>4 cols</Center>
+            </Paper>
+          </Grid.Col>
+          <Grid.Col span={4}>
+            <Paper withBorder p="xs">
+              <Center>4 cols</Center>
+            </Paper>
+          </Grid.Col>
+          <Grid.Col span={4}>
+            <Paper withBorder p="xs">
+              <Center>4 cols</Center>
+            </Paper>
+          </Grid.Col>
         </Grid>
         <Flex gap="sm" wrap="wrap">
-          <Paper withBorder p="xs">Flex 1</Paper>
-          <Paper withBorder p="xs">Flex 2</Paper>
-          <Paper withBorder p="xs">Flex 3</Paper>
+          <Paper withBorder p="xs">
+            Flex 1
+          </Paper>
+          <Paper withBorder p="xs">
+            Flex 2
+          </Paper>
+          <Paper withBorder p="xs">
+            Flex 3
+          </Paper>
         </Flex>
         <ScrollArea h={100} type="always">
           <Box p="md" style={{ width: 800 }}>
-            <Text>Scrollable area — drag horizontally to see. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</Text>
+            <Text>
+              Scrollable area — drag horizontally to see. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor.
+            </Text>
           </Box>
         </ScrollArea>
         <Space h="md" />
@@ -253,9 +309,15 @@ export default function CorePage() {
               <Tabs.Tab value="two">Two</Tabs.Tab>
               <Tabs.Tab value="three">Three</Tabs.Tab>
             </Tabs.List>
-            <Tabs.Panel value="one" pt="sm">Content one</Tabs.Panel>
-            <Tabs.Panel value="two" pt="sm">Content two</Tabs.Panel>
-            <Tabs.Panel value="three" pt="sm">Content three</Tabs.Panel>
+            <Tabs.Panel value="one" pt="sm">
+              Content one
+            </Tabs.Panel>
+            <Tabs.Panel value="two" pt="sm">
+              Content two
+            </Tabs.Panel>
+            <Tabs.Panel value="three" pt="sm">
+              Content three
+            </Tabs.Panel>
           </Tabs>
         </Paper>
         <SegmentedControl value={segment} onChange={setSegment} data={['react', 'vue', 'svelte']} />
@@ -265,9 +327,15 @@ export default function CorePage() {
           <Stepper.Step label="Done" description="Deploy" />
         </Stepper>
         <Timeline active={1}>
-          <Timeline.Item title="Created"><Text size="sm">2 days ago</Text></Timeline.Item>
-          <Timeline.Item title="Updated"><Text size="sm">1 day ago</Text></Timeline.Item>
-          <Timeline.Item title="Deployed"><Text size="sm">just now</Text></Timeline.Item>
+          <Timeline.Item title="Created">
+            <Text size="sm">2 days ago</Text>
+          </Timeline.Item>
+          <Timeline.Item title="Updated">
+            <Text size="sm">1 day ago</Text>
+          </Timeline.Item>
+          <Timeline.Item title="Deployed">
+            <Text size="sm">just now</Text>
+          </Timeline.Item>
         </Timeline>
       </Section>
 
@@ -317,9 +385,27 @@ export default function CorePage() {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            <Table.Tr><Table.Td>Alice</Table.Td><Table.Td>Dev</Table.Td><Table.Td><Badge color="green">Active</Badge></Table.Td></Table.Tr>
-            <Table.Tr><Table.Td>Bob</Table.Td><Table.Td>Design</Table.Td><Table.Td><Badge color="yellow">Away</Badge></Table.Td></Table.Tr>
-            <Table.Tr><Table.Td>Carol</Table.Td><Table.Td>PM</Table.Td><Table.Td><Badge color="red">Offline</Badge></Table.Td></Table.Tr>
+            <Table.Tr>
+              <Table.Td>Alice</Table.Td>
+              <Table.Td>Dev</Table.Td>
+              <Table.Td>
+                <Badge color="green">Active</Badge>
+              </Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>Bob</Table.Td>
+              <Table.Td>Design</Table.Td>
+              <Table.Td>
+                <Badge color="yellow">Away</Badge>
+              </Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>Carol</Table.Td>
+              <Table.Td>PM</Table.Td>
+              <Table.Td>
+                <Badge color="red">Offline</Badge>
+              </Table.Td>
+            </Table.Tr>
           </Table.Tbody>
         </Table>
       </Section>
@@ -333,9 +419,15 @@ export default function CorePage() {
       <Section title="Overlays & modals">
         <Group>
           <Button onClick={openModal}>Open Modal</Button>
-          <Button variant="outline" onClick={openDrawer}>Open Drawer</Button>
-          <Button variant="light" onClick={toggleDialog}>Toggle Dialog</Button>
-          <Button variant="subtle" onClick={toggleLoading}>Toggle LoadingOverlay</Button>
+          <Button variant="outline" onClick={openDrawer}>
+            Open Drawer
+          </Button>
+          <Button variant="light" onClick={toggleDialog}>
+            Toggle Dialog
+          </Button>
+          <Button variant="subtle" onClick={toggleLoading}>
+            Toggle LoadingOverlay
+          </Button>
         </Group>
         <Box pos="relative" h={80}>
           <LoadingOverlay visible={loadingVisible} />
@@ -343,13 +435,17 @@ export default function CorePage() {
         </Box>
         <Modal opened={modalOpened} onClose={closeModal} title="Modal demo">
           <Text>This is a modal dialog.</Text>
-          <Button mt="md" onClick={closeModal}>Close</Button>
+          <Button mt="md" onClick={closeModal}>
+            Close
+          </Button>
         </Modal>
         <Drawer opened={drawerOpened} onClose={closeDrawer} title="Drawer demo" position="right">
           <Text>Drawer content here.</Text>
         </Drawer>
         <Dialog opened={dialogOpened} withCloseButton onClose={closeDialog} size="lg" radius="md">
-          <Text size="sm" fw={500}>Subscribe to newsletter</Text>
+          <Text size="sm" fw={500}>
+            Subscribe to newsletter
+          </Text>
           <Group mt="sm">
             <TextInput placeholder="hello@example.com" style={{ flex: 1 }} />
             <Button onClick={closeDialog}>Subscribe</Button>
@@ -360,13 +456,25 @@ export default function CorePage() {
       {/* ─── Feedback ────────────────────────────────────────── */}
       <Section title="Feedback">
         <Stack>
-          <Alert title="Info" color="blue">Informational alert message.</Alert>
-          <Alert title="Success" color="green">Operation completed successfully!</Alert>
-          <Alert title="Warning" color="yellow">Please review before proceeding.</Alert>
-          <Alert title="Error" color="red">Something went wrong.</Alert>
+          <Alert title="Info" color="blue">
+            Informational alert message.
+          </Alert>
+          <Alert title="Success" color="green">
+            Operation completed successfully!
+          </Alert>
+          <Alert title="Warning" color="yellow">
+            Please review before proceeding.
+          </Alert>
+          <Alert title="Error" color="red">
+            Something went wrong.
+          </Alert>
           <Popover>
-            <Popover.Target><Button>Open popover</Button></Popover.Target>
-            <Popover.Dropdown><Text size="sm">Popover content</Text></Popover.Dropdown>
+            <Popover.Target>
+              <Button>Open popover</Button>
+            </Popover.Target>
+            <Popover.Dropdown>
+              <Text size="sm">Popover content</Text>
+            </Popover.Dropdown>
           </Popover>
           <Divider label="end of feedback" />
         </Stack>

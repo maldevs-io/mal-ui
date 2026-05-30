@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+import { writeFile } from 'node:fs/promises';
 /**
  * Bundle src/styles/index.css into dist/styles.css with all @import inlined,
  * so consumers only need: `import 'mal-ui/styles.css'`.
@@ -6,7 +7,6 @@
  * Bun.build supports CSS bundling out of the box.
  */
 import { resolve } from 'node:path';
-import { writeFile } from 'node:fs/promises';
 
 const ROOT = resolve(import.meta.dir, '..');
 const ENTRY = resolve(ROOT, 'src/styles/index.css');
@@ -33,4 +33,4 @@ if (!output) {
   await writeFile(OUT, text);
 }
 
-console.log(`[mal-ui] css bundled → dist/styles.css`);
+console.log('[mal-ui] css bundled → dist/styles.css');
