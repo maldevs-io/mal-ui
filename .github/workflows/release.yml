@@ -56,7 +56,7 @@ jobs:
           const packageJsonPath = 'package.json';
           const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
           packageJson.version = process.env.VERSION;
-          writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, '\t')}\n`);
+          writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, 2)}\n`);
           NODE
 
       - run: bun install --frozen-lockfile
