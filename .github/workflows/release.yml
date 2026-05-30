@@ -54,9 +54,23 @@ jobs:
           import { readFileSync, writeFileSync } from 'node:fs';
 
           const packageJsonPath = 'package.json';
-          const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
-          packageJson.version = process.env.VERSION;
-          writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, 2)}\n`);
+          const packageJson = readFileSync(packageJsonPath, 'utf8');
+          const version = process.env.VERSION;
+
+          if (!version) {
+            throw new Error('Missing VERSION env var');
+          }
+
+          const updatedPackageJson = packageJson.replace(
+            /("version"\s*:\s*")[^"]+(")/,
+            `$1${version}$2`,
+          );
+
+          if (updatedPackageJson === packageJson) {
+            throw new Error('Failed to update package version');
+          }
+
+          writeFileSync(packageJsonPath, updatedPackageJson);
           NODE
 
       - run: bun install --frozen-lockfile
