@@ -1,37 +1,56 @@
-# MALUI — Next.js demo
+# mal-ui — Next.js Demo
 
-A demo of every `mal-ui` subpath inside a Next.js 15 (App Router) application.
+A full-coverage demo of every `mal-ui` subpath running inside a **Next.js 16 (App Router)** application. Each subpath has its own route so you can explore components in isolation.
 
-## Run
+---
+
+## Running Locally
+
+> **Prerequisite:** Build the library first so the `file:../..` workspace link resolves to the `dist/` output.
 
 ```bash
-# from repo root: build the library first so `file:../..` resolves to dist
-cd /Users/manas/Documents/MALDevs/mal/mal-ui
+# 1. From the mal-ui root, build the library
 bun run build
 
+# 2. Install demo dependencies and start the dev server
 cd examples/nextjs-demo
 bun install
 bun run dev
 ```
 
-Open http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000).
 
-## What is exercised
+---
 
-| Route             | Subpath                 | Demoed APIs                                                      |
-| ----------------- | ----------------------- | ---------------------------------------------------------------- |
-| `/`               | overview                | navigation                                                       |
-| `/core`           | `mal-ui/core`           | Button, Inputs, Tabs, Stepper, Timeline, Card, etc.              |
-| `/hooks`          | `mal-ui/hooks`          | 20+ hooks                                                        |
-| `/form`           | `mal-ui/form`           | `useForm` with validation                                        |
-| `/charts`         | `mal-ui/charts`         | Line/Area/Bar/Composite/Donut/Pie/Radar/Scatter/Bubble/Sparkline |
-| `/notifications`  | `mal-ui/notifications`  | show / update / clean                                            |
-| `/modals`         | `mal-ui/modals`         | confirm + content modals                                         |
-| `/spotlight`      | `mal-ui/spotlight`      | global ⌘K with actions                                           |
-| `/code-highlight` | `mal-ui/code-highlight` | inline, block, tabbed                                            |
-| `/tiptap`         | `mal-ui/tiptap`         | full toolbar editor                                              |
-| `/dropzone`       | `mal-ui/dropzone`       | image / pdf / csv accept                                         |
-| `/carousel`       | `mal-ui/carousel`       | loop, indicators                                                 |
-| `/nprogress`      | `mal-ui/nprogress`      | imperative API                                                   |
-| `/schedule`       | `mal-ui/schedule`       | day view with events                                             |
-| `/theme`          | `mal-ui/theme`          | malTheme + tokens preview                                        |
+## Routes
+
+| Route | Subpath | What is demoed |
+|---|---|---|
+| `/` | — | Overview & navigation |
+| `/core` | `mal-ui/core` | Button, TextInput, Select, Tabs, Stepper, Timeline, Card, Badge, … |
+| `/hooks` | `mal-ui/hooks` | 20+ hooks: `useDisclosure`, `useLocalStorage`, `useMediaQuery`, … |
+| `/form` | `mal-ui/form` | `useForm` with field validation and error display |
+| `/charts` | `mal-ui/charts` | Line, Area, Bar, Composite, Donut, Pie, Radar, Scatter, Bubble, Sparkline |
+| `/notifications` | `mal-ui/notifications` | show / update / hide / clean |
+| `/modals` | `mal-ui/modals` | Confirm modal + content modal |
+| `/spotlight` | `mal-ui/spotlight` | Global `⌘K` command palette |
+| `/code-highlight` | `mal-ui/code-highlight` | Inline, block, and tabbed code highlighting |
+| `/tiptap` | `mal-ui/tiptap` | Full rich-text editor with toolbar |
+| `/dropzone` | `mal-ui/dropzone` | Image / PDF / CSV file upload |
+| `/carousel` | `mal-ui/carousel` | Loop carousel with indicators |
+| `/nprogress` | `mal-ui/nprogress` | Imperative top-of-page progress bar |
+| `/dates` | `mal-ui/dates` | Date pickers, calendars, time pickers |
+| `/schedule` | `mal-ui/schedule` | Day view with events |
+| `/theme` | `mal-ui/theme` | `malTheme` preview + raw design tokens |
+
+---
+
+## Tech Stack
+
+| Tool | Version |
+|---|---|
+| Next.js | 16 (App Router) |
+| React | 19 |
+| mal-ui | workspace (`file:../..`) |
+| Bun | latest |
+| TypeScript | 5.x |
