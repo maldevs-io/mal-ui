@@ -4,11 +4,16 @@
   "description": "MAL UI — internal React components library for MAL Devs",
   "type": "module",
   "private": false,
-  "sideEffects": ["**/*.css"],
-  "files": ["dist", "README.md"],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "exports": {
     ".": {
@@ -159,5 +164,10 @@
   "engines": {
     "node": ">=20"
   },
-  "keywords": ["mal-ui", "react", "components", "internal"]
+  "keywords": [
+    "mal-ui",
+    "react",
+    "components",
+    "internal"
+  ]
 }
