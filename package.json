@@ -5,7 +5,7 @@
   "type": "module",
   "private": false,
   "sideEffects": ["**/*.css"],
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "LICENSE"],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
