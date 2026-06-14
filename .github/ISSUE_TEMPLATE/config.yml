@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/maldevs-io/mal-ui/security/advisories/new
+    about: Report security issues privately.
+  - name: Questions and discussions
+    url: https://github.com/maldevs-io/mal-ui/discussions
+    about: Ask usage questions or discuss ideas before filing an issue.

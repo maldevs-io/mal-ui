@@ -1,0 +1,24 @@
+name: Documentation improvement
+description: Report missing, unclear, or incorrect documentation.
+title: "docs: "
+labels: ["documentation", "needs triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      placeholder: "README.md, docs/PROJECT_STRUCTURE.md, examples/nextjs-demo/..."
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What should change?
+      description: Explain what is missing, unclear, outdated, or incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording or example
+      description: Optional, but very helpful.

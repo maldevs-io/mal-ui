@@ -1,6 +1,10 @@
 # mal-ui
 
-A React component library built on [Mantine v9](https://mantine.dev), providing a complete design system for MAL Devs projects — components, hooks, form utilities, charts, a rich-text editor, file uploads, and more, all pre-wired to the MAL brand theme.
+[![CI](https://github.com/maldevs-io/mal-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/maldevs-io/mal-ui/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/mal-ui.svg)](https://www.npmjs.com/package/mal-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+An open-source React component library built on [Mantine v9](https://mantine.dev), providing a complete design system for MAL Devs projects — components, hooks, form utilities, charts, a rich-text editor, file uploads, and more, all pre-wired to the MAL brand theme.
 
 ---
 
@@ -12,6 +16,7 @@ A React component library built on [Mantine v9](https://mantine.dev), providing 
 - [Peer Dependencies](#peer-dependencies)
 - [Theme](#theme)
 - [Available Subpaths](#available-subpaths)
+- [Community](#community)
 - [Development](#development)
 
 ---
@@ -202,6 +207,25 @@ modals.openConfirmModal({
   onConfirm: () => deleteItem(),
 });
 ```
+
+---
+
+## Community
+
+MAL UI is open source and welcomes community help.
+
+- Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
+- Follow the [Code of Conduct](./CODE_OF_CONDUCT.md) in all project spaces.
+- Report vulnerabilities through [SECURITY.md](./SECURITY.md), not public issues.
+- Use [SUPPORT.md](./SUPPORT.md) to choose the right support path.
+- See [GOVERNANCE.md](./GOVERNANCE.md) for maintainer roles and decision-making.
+- See [ROADMAP.md](./ROADMAP.md) for current direction.
+
+For maintainers and frequent contributors:
+
+- [Project Structure](./docs/PROJECT_STRUCTURE.md)
+- [Accessibility Guide](./docs/ACCESSIBILITY.md)
+- [Release Guide](./docs/RELEASE.md)
 
 ---
 

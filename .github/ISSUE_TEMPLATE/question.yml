@@ -1,0 +1,17 @@
+name: Question
+description: Ask a focused usage or contribution question.
+title: "question: "
+labels: ["question", "needs triage"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What are you trying to understand or accomplish?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Include code, package versions, or links if relevant.

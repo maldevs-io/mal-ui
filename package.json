@@ -1,11 +1,21 @@
 {
   "name": "mal-ui",
   "version": "0.1.5",
-  "description": "MAL UI — internal React components library for MAL Devs",
+  "description": "MAL UI — open-source React component library for MAL Devs",
+  "license": "MIT",
+  "author": "MAL Devs",
+  "homepage": "https://github.com/maldevs-io/mal-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maldevs-io/mal-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maldevs-io/mal-ui/issues"
+  },
   "type": "module",
   "private": false,
   "sideEffects": ["**/*.css"],
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": ["dist", "README.md", "LICENSE", "CHANGELOG.md"],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -159,5 +169,13 @@
   "engines": {
     "node": ">=20"
   },
-  "keywords": ["mal-ui", "react", "components", "internal"]
+  "keywords": [
+    "mal-ui",
+    "mantine",
+    "react",
+    "typescript",
+    "components",
+    "design-system",
+    "ui-library"
+  ]
 }

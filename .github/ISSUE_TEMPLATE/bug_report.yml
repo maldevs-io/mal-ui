@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a reproducible problem in MAL UI.
+title: "bug: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Clear reproductions help us fix issues faster.
+  - type: input
+    id: version
+    attributes:
+      label: MAL UI version
+      description: Which `mal-ui` version are you using?
+      placeholder: "0.1.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: subpath
+    attributes:
+      label: Affected subpath
+      options:
+        - mal-ui
+        - mal-ui/core
+        - mal-ui/hooks
+        - mal-ui/form
+        - mal-ui/charts
+        - mal-ui/notifications
+        - mal-ui/modals
+        - mal-ui/spotlight
+        - mal-ui/code-highlight
+        - mal-ui/tiptap
+        - mal-ui/dropzone
+        - mal-ui/carousel
+        - mal-ui/nprogress
+        - mal-ui/dates
+        - mal-ui/schedule
+        - mal-ui/theme
+        - mal-ui/styles.css
+        - build or packaging
+        - documentation
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug and the impact.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Link a repo, sandbox, or paste the smallest code sample that reproduces the issue.
+      placeholder: |
+        Steps:
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include anything relevant.
+      value: |
+        - OS:
+        - Browser:
+        - React version:
+        - Next.js/Vite/etc:
+        - Bun/Node version:
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Screenshots, logs, or links.

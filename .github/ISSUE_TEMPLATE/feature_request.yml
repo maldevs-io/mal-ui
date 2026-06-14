@@ -1,0 +1,46 @@
+name: Feature request
+description: Suggest an improvement or new capability.
+title: "feat: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the API, behavior, or documentation you want.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - components
+        - hooks
+        - forms
+        - charts
+        - dates or schedule
+        - theme or tokens
+        - build or packaging
+        - documentation
+        - examples
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What have you tried, or what other approaches did you consider?
+  - type: textarea
+    id: breaking
+    attributes:
+      label: Compatibility
+      description: Would this introduce a breaking change or migration work?
