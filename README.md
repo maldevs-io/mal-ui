@@ -119,6 +119,7 @@ Import only what you need — each subpath is independently tree-shakeable:
 | `mal-ui/schedule`       | Weekly/day schedule view                                             |
 | `mal-ui/theme`          | `malTheme` object + raw design tokens                                |
 | `mal-ui/styles.css`     | Required global CSS (import once at your app root)                   |
+| `mal-ui/tailwind.css`   | Optional Tailwind v4 preset mapping MAL tokens to utilities          |
 
 ---
 
@@ -167,6 +168,51 @@ import { malColors, malSpacingTokens, malBreakpoints } from "mal-ui/theme";
 ```
 
 Both Mantine names (`MantineProvider`, `useMantineTheme`) and MALUI aliases (`MALUIProvider`, `useMALUITheme`) are exported from `mal-ui/core` — use whichever you prefer.
+
+---
+
+## Tailwind CSS v4 (optional)
+
+`mal-ui` ships a Tailwind v4 preset that maps the MAL design tokens onto Tailwind
+utilities, so `bg-mal-brand-600`, `p-md`, `rounded-lg`, `text-lg`, `shadow-md`,
+and `dark:` variants all follow the MAL brand out of the box. Dark mode is wired
+to Mantine's `data-mantine-color-scheme` attribute, so it stays in sync with
+`MALUIProvider`.
+
+1 — Install Tailwind v4 in your app:
+
+```bash
+npm install -D tailwindcss @tailwindcss/postcss
+```
+
+2 — Add the PostCSS plugin (`postcss.config.mjs`):
+
+```js
+export default {
+  plugins: { "@tailwindcss/postcss": {} },
+};
+```
+
+3 — Import Tailwind and the preset in your global CSS:
+
+```css
+@import "tailwindcss";
+@import "mal-ui/tailwind.css";
+```
+
+4 — Use Tailwind utilities alongside Mantine components:
+
+```tsx
+import { Card } from "mal-ui/core";
+
+<Card className="p-md rounded-lg shadow-md dark:bg-mal-neutral-800">
+  <h2 className="text-lg text-mal-brand-600">Branded with Tailwind</h2>
+</Card>;
+```
+
+> Import order matters: load `mal-ui/styles.css` **after** your Tailwind entry so
+> Mantine's component styling stays intact while Tailwind utilities remain
+> available for layout and custom elements.
 
 ---
 

@@ -1,0 +1,5 @@
+/* Tailwind v4 entry — pulls in the mal-ui design-token preset so utilities
+   like `bg-mal-brand-600`, `p-md`, `rounded-lg`, `text-lg`, and `dark:` follow
+   the MAL brand and stay in sync with Mantine's color scheme. */
+@import "tailwindcss";
+@import "mal-ui/tailwind.css";

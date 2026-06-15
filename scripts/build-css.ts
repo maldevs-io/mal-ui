@@ -34,3 +34,14 @@ if (!output) {
 }
 
 console.log('[mal-ui] css bundled → dist/styles.css');
+
+// ─── Tailwind v4 preset ──────────────────────────────────────────────────────
+// Copy the Tailwind theme preset verbatim (it must keep its `@theme` /
+// `@custom-variant` at-rules intact so consumers can `@import` it after
+// `@import "tailwindcss"`). No bundling/minifying — it is processed by the
+// consumer's own Tailwind build.
+const TW_ENTRY = resolve(ROOT, 'src/styles/tailwind.css');
+const TW_OUT = resolve(ROOT, 'dist/tailwind.css');
+await writeFile(TW_OUT, await Bun.file(TW_ENTRY).text());
+
+console.log('[mal-ui] tailwind preset copied → dist/tailwind.css');

@@ -1,0 +1,148 @@
+/**
+ * mal-ui — Tailwind CSS v4 theme preset
+ *
+ * Maps the MAL design tokens (colors, spacing, radius, typography, shadows,
+ * breakpoints) onto Tailwind v4 `@theme` variables so Tailwind utilities use
+ * the MAL brand by default.
+ *
+ * Usage (in your Tailwind entry CSS, e.g. app/globals.css):
+ *
+ *   @import "tailwindcss";
+ *   @import "mal-ui/tailwind.css";
+ *
+ * Dark mode is wired to Mantine's `data-mantine-color-scheme="dark"` attribute,
+ * so `dark:` variants stay in sync with `MALUIProvider` / `useMALUIColorScheme`.
+ */
+
+/* Keep `dark:` utilities in sync with Mantine's color scheme attribute. */
+@custom-variant dark (&:where([data-mantine-color-scheme="dark"], [data-mantine-color-scheme="dark"] *));
+
+@theme {
+    /* ─── Brand colors ──────────────────────────────────────────────────── */
+    --color-mal-brand-50: #f5eeff;
+    --color-mal-brand-100: #e5dbf7;
+    --color-mal-brand-200: #c6b4e8;
+    --color-mal-brand-300: #a68bd9;
+    --color-mal-brand-400: #8b68cc;
+    --color-mal-brand-500: #7a51c5;
+    --color-mal-brand-600: #6f42c1;
+    --color-mal-brand-700: #6138ac;
+    --color-mal-brand-800: #56319a;
+    --color-mal-brand-900: #4a2889;
+
+    --color-mal-secondary-50: #f9f0ff;
+    --color-mal-secondary-100: #efdbff;
+    --color-mal-secondary-200: #d3adf7;
+    --color-mal-secondary-300: #b37feb;
+    --color-mal-secondary-400: #9254de;
+    --color-mal-secondary-500: #722ed1;
+    --color-mal-secondary-600: #531dab;
+    --color-mal-secondary-700: #391085;
+    --color-mal-secondary-800: #22075e;
+    --color-mal-secondary-900: #120338;
+
+    --color-mal-success-50: #f6ffed;
+    --color-mal-success-100: #d9f7be;
+    --color-mal-success-200: #b7eb8f;
+    --color-mal-success-300: #95de64;
+    --color-mal-success-400: #73d13d;
+    --color-mal-success-500: #52c41a;
+    --color-mal-success-600: #389e0d;
+    --color-mal-success-700: #237804;
+    --color-mal-success-800: #135200;
+    --color-mal-success-900: #092b00;
+
+    --color-mal-warning-50: #fffbe6;
+    --color-mal-warning-100: #fff1b8;
+    --color-mal-warning-200: #ffe58f;
+    --color-mal-warning-300: #ffd666;
+    --color-mal-warning-400: #ffc53d;
+    --color-mal-warning-500: #faad14;
+    --color-mal-warning-600: #d48806;
+    --color-mal-warning-700: #ad6800;
+    --color-mal-warning-800: #874d00;
+    --color-mal-warning-900: #613400;
+
+    --color-mal-error-50: #fff1f0;
+    --color-mal-error-100: #ffccc7;
+    --color-mal-error-200: #ffa39e;
+    --color-mal-error-300: #ff7875;
+    --color-mal-error-400: #ff4d4f;
+    --color-mal-error-500: #f5222d;
+    --color-mal-error-600: #cf1322;
+    --color-mal-error-700: #a8071a;
+    --color-mal-error-800: #820014;
+    --color-mal-error-900: #5c0011;
+
+    --color-mal-neutral-50: #fafafa;
+    --color-mal-neutral-100: #f5f5f5;
+    --color-mal-neutral-200: #e8e8e8;
+    --color-mal-neutral-300: #d9d9d9;
+    --color-mal-neutral-400: #bfbfbf;
+    --color-mal-neutral-500: #8c8c8c;
+    --color-mal-neutral-600: #595959;
+    --color-mal-neutral-700: #434343;
+    --color-mal-neutral-800: #262626;
+    --color-mal-neutral-900: #141414;
+
+    /* Semantic aliases (map to the primary brand shade) */
+    --color-primary: #6f42c1;
+    --color-secondary: #722ed1;
+    --color-success: #52c41a;
+    --color-warning: #faad14;
+    --color-error: #f5222d;
+    --color-neutral: #8c8c8c;
+
+    /* ─── Spacing (enables p-xs, m-md, gap-lg, …) ───────────────────────── */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* ─── Radius (rounded-xs … rounded-xl) ──────────────────────────────── */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* ─── Typography (text-xs … text-xl) ────────────────────────────────── */
+    --text-xs: 12px;
+    --text-xs--line-height: 1.4;
+    --text-sm: 14px;
+    --text-sm--line-height: 1.45;
+    --text-md: 16px;
+    --text-md--line-height: 1.55;
+    --text-lg: 18px;
+    --text-lg--line-height: 1.6;
+    --text-xl: 20px;
+    --text-xl--line-height: 1.65;
+
+    /* ─── Line heights (leading-xs … leading-xl) ────────────────────────── */
+    --leading-xs: 1.4;
+    --leading-sm: 1.45;
+    --leading-md: 1.55;
+    --leading-lg: 1.6;
+    --leading-xl: 1.65;
+
+    /* ─── Font families ─────────────────────────────────────────────────── */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+
+    /* ─── Shadows (shadow-xs … shadow-xl) ───────────────────────────────── */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+    /* ─── Breakpoints ───────────────────────────────────────────────────── */
+    --breakpoint-xs: 36em;
+    --breakpoint-sm: 48em;
+    --breakpoint-md: 62em;
+    --breakpoint-lg: 75em;
+    --breakpoint-xl: 88em;
+}

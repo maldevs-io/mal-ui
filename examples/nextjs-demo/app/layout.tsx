@@ -1,3 +1,4 @@
+import './globals.css';
 import 'mal-ui/styles.css';
 import { ColorSchemeScript, MALUIHtmlProps } from 'mal-ui/core';
 import type { Metadata } from 'next';

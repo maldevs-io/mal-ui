@@ -34,11 +34,11 @@ selectors, and behavior are unchanged.
 
 ```tsx
 // app/providers.tsx — Next.js App Router
-'use client';
+"use client";
 
-import { MALUIProvider } from 'mal-ui/core';
-import { malTheme } from 'mal-ui/theme';
-import 'mal-ui/styles.css';
+import { MALUIProvider } from "mal-ui/core";
+import { malTheme } from "mal-ui/theme";
+import "mal-ui/styles.css";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -52,32 +52,33 @@ export function Providers({ children }: { children: React.ReactNode }) {
 Subsystems that need their own provider/renderer (add only if used):
 
 ```tsx
-import { ModalsProvider } from 'mal-ui/modals';        // wrap children
-import { Notifications } from 'mal-ui/notifications';   // render <Notifications />
-import { NavigationProgress } from 'mal-ui/nprogress';  // render <NavigationProgress />
+import { ModalsProvider } from "mal-ui/modals"; // wrap children
+import { Notifications } from "mal-ui/notifications"; // render <Notifications />
+import { NavigationProgress } from "mal-ui/nprogress"; // render <NavigationProgress />
 ```
 
 ## Subpath Map
 
-| Import from | Use for | Peer deps to install |
-|---|---|---|
-| `mal-ui` | Common components + hooks (re-exports `core` + `hooks`) | — |
-| `mal-ui/core` | All components: `Button`, `TextInput`, `Modal`, `Tabs`, `Card`, … | — |
-| `mal-ui/hooks` | All hooks: `useDisclosure`, `useLocalStorage`, `useMediaQuery`, … | — |
-| `mal-ui/form` | `useForm`, validators (`isEmail`, `isNotEmpty`, …) | — |
-| `mal-ui/charts` | `LineChart`, `BarChart`, `DonutChart`, `AreaChart`, … | `recharts` |
-| `mal-ui/notifications` | `notifications.show()`, `<Notifications />` | — |
-| `mal-ui/modals` | `modals.openConfirmModal()`, `<ModalsProvider>` | — |
-| `mal-ui/spotlight` | `⌘K` spotlight search | — |
-| `mal-ui/code-highlight` | Syntax-highlighted code blocks (Shiki) | `shiki` |
-| `mal-ui/tiptap` | Rich-text editor | `@tiptap/react @tiptap/pm @tiptap/starter-kit @tiptap/extension-link` |
-| `mal-ui/dropzone` | File upload dropzone | — |
-| `mal-ui/carousel` | Carousel | `embla-carousel-react` |
-| `mal-ui/nprogress` | Top-of-page progress bar | — |
-| `mal-ui/dates` | Date/time pickers, calendars | `dayjs` |
-| `mal-ui/schedule` | Weekly/day schedule view | `dayjs` |
-| `mal-ui/theme` | `malTheme` + raw tokens (`malColors`, `malSpacingTokens`, …) | — |
-| `mal-ui/styles.css` | Required global CSS (import once) | — |
+| Import from             | Use for                                                           | Peer deps to install                                                  |
+| ----------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `mal-ui`                | Common components + hooks (re-exports `core` + `hooks`)           | —                                                                     |
+| `mal-ui/core`           | All components: `Button`, `TextInput`, `Modal`, `Tabs`, `Card`, … | —                                                                     |
+| `mal-ui/hooks`          | All hooks: `useDisclosure`, `useLocalStorage`, `useMediaQuery`, … | —                                                                     |
+| `mal-ui/form`           | `useForm`, validators (`isEmail`, `isNotEmpty`, …)                | —                                                                     |
+| `mal-ui/charts`         | `LineChart`, `BarChart`, `DonutChart`, `AreaChart`, …             | `recharts`                                                            |
+| `mal-ui/notifications`  | `notifications.show()`, `<Notifications />`                       | —                                                                     |
+| `mal-ui/modals`         | `modals.openConfirmModal()`, `<ModalsProvider>`                   | —                                                                     |
+| `mal-ui/spotlight`      | `⌘K` spotlight search                                             | —                                                                     |
+| `mal-ui/code-highlight` | Syntax-highlighted code blocks (Shiki)                            | `shiki`                                                               |
+| `mal-ui/tiptap`         | Rich-text editor                                                  | `@tiptap/react @tiptap/pm @tiptap/starter-kit @tiptap/extension-link` |
+| `mal-ui/dropzone`       | File upload dropzone                                              | —                                                                     |
+| `mal-ui/carousel`       | Carousel                                                          | `embla-carousel-react`                                                |
+| `mal-ui/nprogress`      | Top-of-page progress bar                                          | —                                                                     |
+| `mal-ui/dates`          | Date/time pickers, calendars                                      | `dayjs`                                                               |
+| `mal-ui/schedule`       | Weekly/day schedule view                                          | `dayjs`                                                               |
+| `mal-ui/theme`          | `malTheme` + raw tokens (`malColors`, `malSpacingTokens`, …)      | —                                                                     |
+| `mal-ui/styles.css`     | Required global CSS (import once)                                 | —                                                                     |
+| `mal-ui/tailwind.css`   | Optional Tailwind v4 preset (MAL tokens → utilities)              | `tailwindcss @tailwindcss/postcss`                                    |
 
 `react` and `react-dom` (>=18.2) are always required. Other peer deps are optional
 and only needed when their subpath is imported.
@@ -87,12 +88,12 @@ and only needed when their subpath is imported.
 Every `Mantine*` identifier is also exported under a `MALUI*` name from `mal-ui/core`.
 Both work; prefer the `MALUI*` form in MAL code for brand consistency.
 
-| Mantine name | MALUI alias |
-|---|---|
-| `MantineProvider` | `MALUIProvider` |
-| `useMantineTheme` | `useMALUITheme` |
-| `useMantineColorScheme` | `useMALUIColorScheme` |
-| `MantineThemeOverride` (type) | `MALUIThemeOverride` |
+| Mantine name                  | MALUI alias           |
+| ----------------------------- | --------------------- |
+| `MantineProvider`             | `MALUIProvider`       |
+| `useMantineTheme`             | `useMALUITheme`       |
+| `useMantineColorScheme`       | `useMALUIColorScheme` |
+| `MantineThemeOverride` (type) | `MALUIThemeOverride`  |
 
 ## Theme
 
@@ -108,7 +109,7 @@ Reference brand colors in any `color` prop, e.g. `color="mal-brand"`,
 `color="mal-brand.5"`, or `color="mal-secondary"`.
 
 ```tsx
-import { malColors, malSpacingTokens, malBreakpoints } from 'mal-ui/theme';
+import { malColors, malSpacingTokens, malBreakpoints } from "mal-ui/theme";
 ```
 
 ## Common Patterns
@@ -116,20 +117,20 @@ import { malColors, malSpacingTokens, malBreakpoints } from 'mal-ui/theme';
 **Form with validation** (`mal-ui/form` + `mal-ui/core`):
 
 ```tsx
-import { useForm, isEmail, isNotEmpty } from 'mal-ui/form';
-import { Button, TextInput, Stack } from 'mal-ui/core';
+import { useForm, isEmail, isNotEmpty } from "mal-ui/form";
+import { Button, TextInput, Stack } from "mal-ui/core";
 
 function LoginForm() {
   const form = useForm({
-    initialValues: { email: '', name: '' },
-    validate: { email: isEmail('Invalid email'), name: isNotEmpty('Required') },
+    initialValues: { email: "", name: "" },
+    validate: { email: isEmail("Invalid email"), name: isNotEmpty("Required") },
   });
 
   return (
     <form onSubmit={form.onSubmit((values) => console.log(values))}>
       <Stack>
-        <TextInput label="Name" {...form.getInputProps('name')} />
-        <TextInput label="Email" {...form.getInputProps('email')} />
+        <TextInput label="Name" {...form.getInputProps("name")} />
+        <TextInput label="Email" {...form.getInputProps("email")} />
         <Button type="submit">Submit</Button>
       </Stack>
     </form>
@@ -140,27 +141,31 @@ function LoginForm() {
 **Chart** (`mal-ui/charts`, needs `recharts`):
 
 ```tsx
-import { LineChart } from 'mal-ui/charts';
+import { LineChart } from "mal-ui/charts";
 
-<LineChart h={300} data={data} dataKey="date"
-  series={[{ name: 'Revenue', color: 'mal-brand.5' }]} />
+<LineChart
+  h={300}
+  data={data}
+  dataKey="date"
+  series={[{ name: "Revenue", color: "mal-brand.5" }]}
+/>;
 ```
 
 **Notification** (`mal-ui/notifications`):
 
 ```tsx
-import { notifications } from 'mal-ui/notifications';
-notifications.show({ title: 'Done!', message: 'Upload complete.' });
+import { notifications } from "mal-ui/notifications";
+notifications.show({ title: "Done!", message: "Upload complete." });
 ```
 
 **Confirm modal** (`mal-ui/modals`):
 
 ```tsx
-import { modals } from 'mal-ui/modals';
-import { Text } from 'mal-ui/core';
+import { modals } from "mal-ui/modals";
+import { Text } from "mal-ui/core";
 
 modals.openConfirmModal({
-  title: 'Delete item',
+  title: "Delete item",
   children: <Text>Are you sure?</Text>,
   onConfirm: () => deleteItem(),
 });

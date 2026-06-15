@@ -131,6 +131,62 @@ import { DatesProvider } from "mal-ui/dates";
 | `mal-ui/code-highlight` | Wrap in `<CodeHighlightAdapterProvider>` with a Shiki adapter |
 | `mal-ui/spotlight`      | Render `<Spotlight />` with actions                           |
 
+## Tailwind CSS v4 (optional)
+
+`mal-ui` ships a Tailwind v4 preset (`mal-ui/tailwind.css`) that maps the MAL
+design tokens onto Tailwind utilities (`bg-mal-brand-600`, `p-md`, `rounded-lg`,
+`text-lg`, `shadow-md`, …). Dark mode is wired to Mantine's
+`data-mantine-color-scheme` attribute so `dark:` variants follow
+`MALUIProvider`.
+
+1. Install Tailwind v4: `npm i -D tailwindcss @tailwindcss/postcss`.
+2. Add `@tailwindcss/postcss` to `postcss.config.mjs`.
+3. In your global CSS, import Tailwind then the preset:
+
+   ```css
+   @import "tailwindcss";
+   @import "mal-ui/tailwind.css";
+   ```
+
+4. Import order: load your Tailwind global CSS **before** `mal-ui/styles.css`
+   so Mantine component styling wins while Tailwind utilities stay available.
+
+Available token-backed utilities: colors `mal-brand`/`mal-secondary`/`mal-success`/
+`mal-warning`/`mal-error`/`mal-neutral` (shades `50`–`900`), spacing/radius/text/
+leading/shadow/breakpoints in `xs`–`xl`.
+
+## PostCSS preset for custom CSS (optional)
+
+To author custom CSS modules with Mantine helpers (`light-dark()`, `dark`/`light`
+mixins, `rem()`/`em()`, `alpha()`, `hover`, `rtl`, `smaller-than`/`larger-than`),
+add `postcss-preset-mantine`. It composes with Tailwind in the same
+`postcss.config.mjs`:
+
+```bash
+npm i -D postcss postcss-preset-mantine postcss-simple-vars
+```
+
+```js
+// postcss.config.mjs
+export default {
+  plugins: {
+    "postcss-preset-mantine": {},
+    "postcss-simple-vars": {
+      variables: {
+        "mantine-breakpoint-xs": "36em",
+        "mantine-breakpoint-sm": "48em",
+        "mantine-breakpoint-md": "62em",
+        "mantine-breakpoint-lg": "75em",
+        "mantine-breakpoint-xl": "88em",
+      },
+    },
+    "@tailwindcss/postcss": {},
+  },
+};
+```
+
+The breakpoint values match `malBreakpoints` from `mal-ui/theme`.
+
 ## Verification checklist
 
 1. `mal-ui/styles.css` imported once at the root.
@@ -140,3 +196,5 @@ import { DatesProvider } from "mal-ui/dates";
 5. Peer deps installed for every subpath used.
 6. Subsystem outlets mounted for `modals` / `notifications` / `nprogress`.
 7. No `@mantine/*` imports anywhere — only `mal-ui/*`.
+8. (Optional) Tailwind v4 wired with `mal-ui/tailwind.css` after `@import "tailwindcss"`.
+9. (Optional) `postcss-preset-mantine` added for Mantine CSS mixins/functions.
