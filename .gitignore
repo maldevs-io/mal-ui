@@ -15,3 +15,6 @@ examples/**/out/
 examples/**/next-env.d.ts
 examples/**/tsconfig.tsbuildinfo
 examples/**/.turbo/
+
+# AI Agent Skills for development
+.agents
