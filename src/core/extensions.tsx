@@ -1,10 +1,18 @@
+'use client';
+
 // ─── MALUI-branded aliases for Mantine identifiers ──────────────────────────
 // Re-export every Mantine-branded symbol under a MALUI name so consumers can use
 // either naming convention. The original Mantine names are still re-exported from index.ts.
 
+import { MantineProvider, type MantineProviderProps } from '@mantine/core';
+import {
+  NavigationProgressProvider,
+  type NavigationProgressProviderProps,
+  type ProgressRouterBase,
+} from '../nprogress';
+
 export {
   // ─── Provider / Context ─────────────────────────────────────────────────────
-  MantineProvider as MALUIProvider,
   MantineContext as MALUIContext,
   MantineThemeProvider as MALUIThemeProvider,
   HeadlessMantineProvider as HeadlessMALUIProvider,
@@ -39,7 +47,6 @@ export type {
   MantineThemeComponents as MALUIThemeComponents,
   MantineThemeOther as MALUIThemeOther,
   MantineThemeSizesOverride as MALUIThemeSizesOverride,
-  MantineProviderProps as MALUIProviderProps,
   MantineThemeProviderProps as MALUIThemeProviderProps,
   MantineColorScheme as MALUIColorScheme,
   MantineColorSchemeManager as MALUIColorSchemeManager,
@@ -77,3 +84,37 @@ export type {
   DefaultMantineColor as DefaultMALUIColor,
   DefaultMantineSize as DefaultMALUISize,
 } from '@mantine/core';
+
+// ─── MALUIProvider ──────────────────────────────────────────────────────────
+// Wraps Mantine's provider and optionally mounts navigation progress. Pass
+// `router` (or `navigationProgress`) to auto-render NavigationProgressProvider —
+// no need to add it manually. Without either prop it behaves like MantineProvider.
+export interface MALUIProviderProps extends MantineProviderProps {
+  /** Router for progress-aware `useRouter()`; presence enables the bar. */
+  router?: ProgressRouterBase;
+  /** Enable/configure navigation progress. `true` for defaults, or bar props. */
+  navigationProgress?: boolean | Omit<NavigationProgressProviderProps, 'router' | 'children'>;
+}
+
+export function MALUIProvider({
+  router,
+  navigationProgress,
+  children,
+  ...others
+}: MALUIProviderProps) {
+  const enableProgress =
+    router != null || (navigationProgress != null && navigationProgress !== false);
+  const barProps = typeof navigationProgress === 'object' ? navigationProgress : undefined;
+
+  return (
+    <MantineProvider {...others}>
+      {enableProgress ? (
+        <NavigationProgressProvider router={router} {...barProps}>
+          {children}
+        </NavigationProgressProvider>
+      ) : (
+        children
+      )}
+    </MantineProvider>
+  );
+}

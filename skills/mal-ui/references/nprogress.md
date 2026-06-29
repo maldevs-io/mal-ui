@@ -44,6 +44,30 @@ export function Providers({ children }) {
 }
 ```
 
+### Shortcut: enable it on `MALUIProvider`
+
+`MALUIProvider` mounts the bar for you when you pass `router` (or
+`navigationProgress`) — no separate provider needed:
+
+```tsx
+"use client";
+import { MALUIProvider } from "mal-ui/core";
+import { useRouter } from "next/navigation";
+
+export function Providers({ children }) {
+  const router = useRouter();
+  return (
+    <MALUIProvider theme={malTheme} router={router}>
+      {children}
+    </MALUIProvider>
+  );
+}
+
+// No router? Auto-detect link clicks only:
+// <MALUIProvider theme={malTheme} navigationProgress>...</MALUIProvider>
+// Configure the bar: navigationProgress={{ color: "blue", size: 4 }}
+```
+
 > Prefer just the bar with no auto-detection? Render `<NavigationProgress />`
 > instead and drive `nprogress` manually.
 

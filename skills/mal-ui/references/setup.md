@@ -66,6 +66,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
 | `classNamesPrefix`     | `string`                      | `"mantine"`          | Prefix for static class names.                                   |
 | `stylesTransform`      | `MALUIStylesTransform`        | –                    | Adapter for css-in-js libraries.                                 |
 | `env`                  | `"default" \| "test"`         | `"default"`          | Disables transitions/portals in test mode.                       |
+| `router`               | `ProgressRouterBase`          | –                    | Provide a router (e.g. Next.js `useRouter`) to auto-mount navigation progress. |
+| `navigationProgress`   | `boolean \| object`           | –                    | Enable/configure the progress bar without a router (`true` or bar props). |
 
 ## Next.js App Router
 
@@ -126,7 +128,7 @@ import { DatesProvider } from "mal-ui/dates";
 | ----------------------- | ------------------------------------------------------------- |
 | `mal-ui/notifications`  | Render `<Notifications />` once                               |
 | `mal-ui/modals`         | Wrap children in `<ModalsProvider>`                           |
-| `mal-ui/nprogress`      | Render `<NavigationProgress />` once                          |
+| `mal-ui/nprogress`      | Pass `router`/`navigationProgress` to `MALUIProvider`, or render `<NavigationProgress />` once |
 | `mal-ui/dates`          | Optional `<DatesProvider>` for locale defaults                |
 | `mal-ui/code-highlight` | Wrap in `<CodeHighlightAdapterProvider>` with a Shiki adapter |
 | `mal-ui/spotlight`      | Render `<Spotlight />` with actions                           |
