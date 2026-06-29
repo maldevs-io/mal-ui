@@ -13,8 +13,9 @@ import {
   useMALUIColorScheme,
 } from 'mal-ui/core';
 import { useDisclosure } from 'mal-ui/hooks';
+import { useRouter } from 'mal-ui/nprogress';
 import { Spotlight, spotlight } from 'mal-ui/spotlight';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 
 const ROUTES = [
